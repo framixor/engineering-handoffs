@@ -1,0 +1,822 @@
+diff --git a/src/components/owner/FrontCounterOrderRow.tsx b/src/components/owner/FrontCounterOrderRow.tsx
+index 4da442e..e259be5 100644
+--- a/src/components/owner/FrontCounterOrderRow.tsx
++++ b/src/components/owner/FrontCounterOrderRow.tsx
+@@ -1,4 +1,12 @@
+-import { AlertTriangle, Bike, Clock, Home, Loader2, MessageCircle } from "lucide-react";
++import {
++  AlertTriangle,
++  Bike,
++  ChevronRight,
++  Clock3,
++  Home,
++  Loader2,
++  MessageCircle,
++} from "lucide-react";
+ import type { Order, OrderStatus } from "@/lib/order/types";
+ import { ownerStatusLabel } from "@/lib/order/owner-labels";
+ import { buildAdminWhatsAppUrl } from "@/lib/order/whatsapp";
+@@ -23,29 +31,37 @@ function ModeChip({ order }: { order: Order }) {
+   );
+ }
+ 
+-/** Idade e urgência são conceitos separados do "novo": cores nunca se misturam. */
+-function AgeChip({ urgency, ageLabel }: { urgency: string; ageLabel: string }) {
+-  if (urgency === "overdue") {
+-    return (
+-      <span className="inline-flex items-center gap-1 rounded-full bg-destructive/10 px-2 py-0.5 text-[11px] font-bold text-destructive">
+-        <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
+-        Atrasado · {ageLabel}
++/** Aging é protagonista, mas sua cor fica localizada no relógio — nunca na moldura inteira. */
++function AgeDisplay({ urgency, ageLabel }: { urgency: string; ageLabel: string }) {
++  const urgent = urgency !== "normal";
++  return (
++    <div
++      className={cn(
++        "flex min-w-[5.15rem] shrink-0 flex-col items-end rounded-lg px-2 py-1.5 text-right",
++        urgency === "overdue"
++          ? "bg-destructive/10 text-destructive"
++          : urgency === "attention"
++            ? "bg-secondary/70 text-foreground"
++            : "bg-muted/70 text-foreground",
++      )}
++    >
++      <span className="flex items-center gap-1 text-lg font-black tabular-nums leading-none tracking-tight">
++        {urgency === "overdue" ? (
++          <AlertTriangle className="h-4 w-4" aria-hidden="true" />
++        ) : (
++          <Clock3 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
++        )}
++        {ageLabel}
+       </span>
+-    );
+-  }
+-  if (urgency === "attention") {
+-    return (
+-      <span className="inline-flex items-center gap-1 rounded-full bg-accent/15 px-2 py-0.5 text-[11px] font-bold text-accent">
+-        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+-        Atenção · {ageLabel}
++      <span className="mt-1 text-[8px] font-black uppercase tracking-[0.12em]">
++        {urgency === "overdue"
++          ? "Atrasado"
++          : urgency === "attention"
++            ? "Atenção"
++            : "Desde o pedido"}
+       </span>
+-    );
+-  }
+-  return (
+-    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground">
+-      <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+-      {ageLabel}
+-    </span>
++      {urgent && <span className="sr-only">Urgência temporal</span>}
++    </div>
+   );
+ }
+ 
+@@ -77,78 +93,116 @@ export function FrontCounterOrderRow({
+       data-urgency={urgency}
+       data-new={isNew ? "true" : undefined}
+       className={cn(
+-        "grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 rounded-2xl border bg-card p-3 sm:flex sm:items-center sm:justify-between",
+-        secondary ? "border-border/70 bg-card/60 p-2.5" : "border-border shadow-sm",
+-        urgency === "overdue" && !isNew && "border-destructive",
++        "relative overflow-hidden rounded-2xl border bg-card shadow-sm",
++        secondary ? "border-border/60 bg-card/70 shadow-none" : "border-border/80",
+         isNew && "order-new",
+         highlighted && "ring-2 ring-primary",
+         pending && "opacity-70",
+       )}
+     >
+-      <div className="min-w-0">
+-        <div className="flex flex-wrap items-center gap-2">
+-          <span className={cn("font-extrabold", secondary ? "text-sm" : "text-base")}>
+-            {order.orderRef}
+-          </span>
+-          {isNew && (
+-            <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-secondary-foreground">
+-              Novo
+-            </span>
+-          )}
+-          <span className="min-w-0 truncate text-sm font-semibold">{order.customerName}</span>
+-          <ModeChip order={order} />
+-          <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
+-            {ownerStatusLabel(order.status, order.fulfillmentType)}
+-          </span>
+-        </div>
+-        <div className="mt-1 flex flex-wrap items-center gap-2">
+-          {reason && (
+-            <span
+-              className={cn(
+-                "text-xs font-bold",
+-                reason.kind === "confirm" ? "text-foreground" : "text-muted-foreground",
++      <span
++        aria-hidden="true"
++        className={cn(
++          "absolute inset-y-0 left-0 w-1",
++          isNew
++            ? "bg-primary"
++            : reason?.kind === "pickupWaiting"
++              ? "bg-whatsapp"
++              : reason?.kind === "deliveryWaiting"
++                ? "bg-accent"
++                : urgency === "overdue"
++                  ? "bg-destructive"
++                  : urgency === "attention"
++                    ? "bg-secondary"
++                    : "bg-border",
++        )}
++      />
++
++      <div
++        className={cn(
++          "flex flex-col",
++          secondary ? "gap-2 p-3 pl-4" : "gap-2.5 p-3.5 pl-5 sm:p-4 sm:pl-5",
++        )}
++      >
++        <div className="flex items-start justify-between gap-3">
++          <div className="min-w-0">
++            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
++              <span className={cn("font-black tracking-tight", secondary ? "text-lg" : "text-xl")}>
++                {order.orderRef}
++              </span>
++              {isNew && (
++                <span className="rounded-full bg-primary px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.16em] text-primary-foreground">
++                  Novo
++                </span>
+               )}
+-            >
+-              {reason.label}
+-            </span>
+-          )}
+-          <AgeChip urgency={urgency} ageLabel={ageLabel} />
++              <span className="min-w-0 truncate text-sm font-bold">{order.customerName}</span>
++            </div>
++            <div className="mt-1 flex flex-wrap items-center gap-2">
++              <ModeChip order={order} />
++              <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
++                {ownerStatusLabel(order.status, order.fulfillmentType)}
++              </span>
++            </div>
++          </div>
++          <AgeDisplay urgency={urgency} ageLabel={ageLabel} />
+         </div>
+-      </div>
+ 
+-      <div className="col-start-1 flex flex-wrap items-center gap-1.5 sm:col-auto sm:shrink-0 sm:justify-end">
+-        {action ? (
++        {reason && (
++          <div className="border-t border-border/60 pt-2">
++            <p className="text-[9px] font-black uppercase tracking-[0.16em] text-muted-foreground">
++              Precisa de você
++            </p>
++            <p className="mt-0.5 text-[15px] font-black leading-tight text-foreground">
++              {reason.label}
++            </p>
++          </div>
++        )}
++
++        <footer
++          className={cn(
++            "flex items-center gap-2",
++            secondary && !reason && "border-t border-border/50 pt-2",
++          )}
++        >
++          {action && (
++            <button
++              type="button"
++              data-primary-action
++              onClick={() => onAdvance(action.next)}
++              disabled={pending}
++              className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-black text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
++            >
++              {pending && (
++                <Loader2 className="h-4 w-4 motion-safe:animate-spin" aria-hidden="true" />
++              )}
++              {pending ? "Atualizando…" : action.label}
++              {!pending && <ChevronRight className="h-4 w-4" aria-hidden="true" />}
++            </button>
++          )}
+           <button
+             type="button"
+-            data-primary-action
+-            onClick={() => onAdvance(action.next)}
+-            disabled={pending}
+-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
++            onClick={onOpen}
++            className={cn(
++              "inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background/50 px-3 text-xs font-bold text-muted-foreground transition hover:border-primary hover:bg-secondary/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
++              !action && "flex-1",
++            )}
++            aria-label={`Abrir detalhes do pedido ${order.orderRef}`}
+           >
+-            {pending && <Loader2 className="h-4 w-4 motion-safe:animate-spin" aria-hidden="true" />}
+-            {pending ? "Atualizando…" : action.label}
++            Detalhes
+           </button>
+-        ) : null}
+-        <button
+-          type="button"
+-          onClick={onOpen}
+-          className="inline-flex min-h-11 items-center rounded-xl border border-border px-3 text-xs font-semibold text-muted-foreground transition hover:border-primary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+-          aria-label={`Abrir detalhes do pedido ${order.orderRef}`}
+-        >
+-          {action ? "Detalhes" : "Abrir detalhes"}
+-        </button>
+-        {whatsappUrl && (
+-          <a
+-            href={whatsappUrl}
+-            target="_blank"
+-            rel="noopener noreferrer"
+-            className="inline-flex min-h-11 items-center gap-1 rounded-xl border border-border px-3 text-xs font-semibold text-muted-foreground transition hover:border-whatsapp hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+-            aria-label={`Falar no WhatsApp sobre o pedido ${order.orderRef}`}
+-          >
+-            <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+-            WhatsApp
+-          </a>
+-        )}
++          {whatsappUrl && (
++            <a
++              href={whatsappUrl}
++              target="_blank"
++              rel="noopener noreferrer"
++              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background/50 text-muted-foreground transition hover:border-whatsapp hover:bg-whatsapp/10 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.97] motion-reduce:transform-none"
++              aria-label={`Falar no WhatsApp sobre o pedido ${order.orderRef}`}
++              title="WhatsApp"
++            >
++              <MessageCircle className="h-4 w-4" aria-hidden="true" />
++            </a>
++          )}
++        </footer>
+       </div>
+     </li>
+   );
+diff --git a/src/components/owner/KitchenTicket.tsx b/src/components/owner/KitchenTicket.tsx
+index cccc498..d98be89 100644
+--- a/src/components/owner/KitchenTicket.tsx
++++ b/src/components/owner/KitchenTicket.tsx
+@@ -1,4 +1,4 @@
+-import { AlertTriangle, Bike, Clock, Home, Loader2 } from "lucide-react";
++import { AlertTriangle, Bike, Clock3, Home, Loader2 } from "lucide-react";
+ import type { OrderStatus } from "@/lib/order/types";
+ import { ownerStatusLabel } from "@/lib/order/owner-labels";
+ import { kitchenAction, type OperationalTicketView } from "@/lib/order/operational-view";
+@@ -33,78 +33,95 @@ export function KitchenTicket({
+       data-order-id={order.id}
+       data-urgency={urgency}
+       className={cn(
+-        "flex flex-col gap-2 rounded-2xl border bg-card p-3 shadow-sm",
+-        urgency === "overdue"
+-          ? "border-2 border-destructive"
+-          : urgency === "attention"
+-            ? "border-accent/60"
+-            : "border-border",
++        "relative flex flex-col gap-2.5 overflow-hidden rounded-2xl border border-border/80 bg-card p-3.5 pt-5 shadow-[0_2px_10px_color-mix(in_oklch,var(--foreground)_6%,transparent)]",
+         highlighted && "ring-2 ring-primary",
+         pending && "opacity-70",
+       )}
+     >
++      <span
++        className={cn(
++          "absolute inset-x-0 top-0 h-1",
++          order.status === "confirmado" ? "bg-primary" : "bg-accent",
++        )}
++        aria-hidden="true"
++      />
+       <header className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-2">
+         <div className="min-w-0">
+           <p className="flex items-baseline gap-2">
+             {position !== undefined && (
+-              <span className="text-[11px] font-bold text-muted-foreground">#{position}</span>
++              <span className="grid h-6 min-w-6 place-items-center rounded-full bg-foreground px-1.5 text-[11px] font-black text-background">
++                {position}
++              </span>
+             )}
+-            <span className="text-2xl font-black leading-none">{order.orderRef}</span>
++            <span className="text-2xl font-black tracking-tight leading-none">
++              {order.orderRef}
++            </span>
+           </p>
+-          <p className="mt-1 text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
++          <p className="mt-2 inline-flex rounded-full bg-muted px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-muted-foreground">
+             {ownerStatusLabel(order.status, order.fulfillmentType)}
+           </p>
+         </div>
+-        <span
++        <div
+           className={cn(
+-            "inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold",
++            "flex min-w-[5.35rem] shrink-0 flex-col items-end rounded-lg px-2 py-1.5 text-right",
+             urgency === "overdue"
+               ? "bg-destructive/10 text-destructive"
+               : urgency === "attention"
+-                ? "bg-accent/15 text-accent"
+-                : "bg-muted text-muted-foreground",
++                ? "bg-secondary/70 text-foreground"
++                : "bg-muted/70 text-foreground",
+           )}
+         >
+-          {urgency === "overdue" ? (
+-            <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
+-          ) : (
+-            <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+-          )}
+-          {ageLabel}
+-        </span>
++          <span className="flex items-center gap-1 text-xl font-black tabular-nums leading-none tracking-tight">
++            {urgency === "overdue" ? (
++              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
++            ) : (
++              <Clock3 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
++            )}
++            {ageLabel}
++          </span>
++          <span className="mt-1 text-[8px] font-black uppercase tracking-[0.12em]">
++            {urgency === "overdue"
++              ? "Atrasado"
++              : urgency === "attention"
++                ? "Atenção"
++                : "Desde o pedido"}
++          </span>
++        </div>
+       </header>
+ 
+-      <ul className="space-y-1.5">
++      <ul className="space-y-1.5 border-y border-border/60 py-2.5">
+         {order.items.map((item) => (
+-          <li key={item.id} className="rounded-lg bg-muted/50 px-2 py-1.5">
+-            <p className="text-sm font-semibold leading-tight">
+-              <span className="text-base font-extrabold text-primary">{item.quantity}x</span>{" "}
++          <li key={item.id} className="rounded-xl bg-muted/40 px-2.5 py-2">
++            <p className="text-[15px] font-bold leading-tight">
++              <span className="text-lg font-black text-foreground">{item.quantity}x</span>{" "}
+               {item.productName}
+             </p>
+             {item.addons.length > 0 && (
+-              <p className="mt-0.5 text-xs font-medium text-foreground">
++              <p className="mt-1 text-xs font-semibold text-foreground">
+                 + {item.addons.map((a) => a.name).join(", ")}
+               </p>
+             )}
+             {item.removedIngredients.length > 0 && (
+-              <p className="mt-0.5 text-xs font-bold uppercase text-destructive">
++              <p className="mt-1 text-xs font-black uppercase text-destructive">
+                 SEM {item.removedIngredients.join(", ")}
+               </p>
+             )}
+             {item.notes && (
+-              <p className="mt-0.5 text-xs italic text-muted-foreground">“{item.notes}”</p>
++              <p className="mt-1 text-xs font-semibold italic text-muted-foreground">
++                “{item.notes}”
++              </p>
+             )}
+           </li>
+         ))}
+       </ul>
+ 
+       {order.notes && (
+-        <p className="rounded-lg bg-secondary px-2 py-1 text-xs font-semibold text-secondary-foreground">
++        <p className="rounded-xl border-l-4 border-primary bg-secondary/70 px-3 py-2 text-xs font-bold text-secondary-foreground">
+           Obs.: {order.notes}
+         </p>
+       )}
+ 
+-      <p className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground">
++      <p className="inline-flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground">
+         {entrega ? (
+           <Bike className="h-3.5 w-3.5" aria-hidden="true" />
+         ) : (
+@@ -120,7 +137,7 @@ export function KitchenTicket({
+             data-primary-action
+             onClick={() => onAdvance(action.next)}
+             disabled={pending}
+-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-bold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
++            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-black text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:transform-none"
+           >
+             {pending && <Loader2 className="h-4 w-4 motion-safe:animate-spin" aria-hidden="true" />}
+             {pending ? "Atualizando…" : action.label}
+diff --git a/src/components/owner/OwnerFrontCounterView.tsx b/src/components/owner/OwnerFrontCounterView.tsx
+index 8e63cc1..0d43478 100644
+--- a/src/components/owner/OwnerFrontCounterView.tsx
++++ b/src/components/owner/OwnerFrontCounterView.tsx
+@@ -72,7 +72,7 @@ export function OwnerFrontCounterView({
+   }, [orders, term, metric, now]);
+ 
+   return (
+-    <div className="flex flex-col gap-4">
++    <div className="flex flex-col gap-5">
+       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+         <MetricCard
+           label="Total ativo"
+@@ -92,18 +92,6 @@ export function OwnerFrontCounterView({
+         ))}
+       </div>
+ 
+-      {metric !== "todos" && (
+-        <div>
+-          <button
+-            type="button"
+-            onClick={() => setMetric("todos")}
+-            className="inline-flex min-h-9 items-center rounded-full border border-primary bg-primary/10 px-3 text-xs font-bold text-primary transition hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+-          >
+-            Filtro ativo · voltar para Todos
+-          </button>
+-        </div>
+-      )}
+-
+       <label className="relative block">
+         <span className="sr-only">Buscar pedido</span>
+         <Search
+@@ -115,23 +103,36 @@ export function OwnerFrontCounterView({
+           value={term}
+           onChange={(e) => setTerm(e.target.value)}
+           placeholder="Buscar X42, cliente ou telefone"
+-          className="h-11 w-full rounded-full border border-border bg-card pl-9 pr-4 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
++          className="h-11 w-full rounded-xl border border-border bg-card pl-9 pr-4 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+         />
+       </label>
+ 
+-      <section aria-labelledby="fc-needs-action">
+-        <h3
+-          id="fc-needs-action"
+-          className="mb-2 text-xs font-black uppercase tracking-wider text-foreground"
+-        >
+-          Precisa de ação ({needsActionList.length})
+-        </h3>
++      <section
++        aria-labelledby="fc-needs-action"
++        className="rounded-3xl border border-primary/30 bg-secondary/15 p-3 sm:p-4"
++      >
++        <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
++          <div>
++            <p className="text-[10px] font-black uppercase tracking-[0.18em] text-muted-foreground">
++              Agora
++            </p>
++            <h3 id="fc-needs-action" className="text-lg font-black tracking-tight text-foreground">
++              Precisa de ação
++              <span className="ml-2 rounded-full bg-primary px-2 py-0.5 align-middle text-[11px] text-primary-foreground">
++                {needsActionList.length}
++              </span>
++            </h3>
++          </div>
++          <p className="text-xs font-semibold text-muted-foreground">
++            Confirmação, retirada e expedição
++          </p>
++        </div>
+         {needsActionList.length === 0 ? (
+-          <p className="rounded-2xl border border-dashed border-border p-5 text-center text-sm text-muted-foreground">
++          <p className="rounded-2xl border border-dashed border-border bg-card/60 p-5 text-center text-sm text-muted-foreground">
+             Nada esperando por você agora.
+           </p>
+         ) : (
+-          <ul className="flex flex-col gap-2">
++          <ul className="grid gap-2.5 lg:grid-cols-2 2xl:grid-cols-3">
+             {needsActionList.map((view) => (
+               <FrontCounterOrderRow
+                 key={view.order.id}
+@@ -146,17 +147,19 @@ export function OwnerFrontCounterView({
+         )}
+       </section>
+ 
+-      <section aria-labelledby="fc-in-progress">
+-        <h3
+-          id="fc-in-progress"
+-          className="mb-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground"
+-        >
+-          Em andamento ({inProgressList.length})
+-        </h3>
++      <section aria-labelledby="fc-in-progress" className="pt-1">
++        <div className="mb-2 flex items-center justify-between gap-2 border-b border-border/60 pb-2">
++          <h3 id="fc-in-progress" className="text-sm font-black text-foreground">
++            Em andamento
++          </h3>
++          <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-muted-foreground">
++            {inProgressList.length}
++          </span>
++        </div>
+         {inProgressList.length === 0 ? (
+           <p className="text-xs text-muted-foreground">Nenhum pedido em andamento.</p>
+         ) : (
+-          <ul className="flex flex-col gap-1.5">
++          <ul className="grid gap-2 lg:grid-cols-2">
+             {inProgressList.map((view) => (
+               <FrontCounterOrderRow
+                 key={view.order.id}
+@@ -236,13 +239,15 @@ function MetricCard({
+       onClick={onClick}
+       aria-pressed={active}
+       className={cn(
+-        "flex min-h-16 flex-col items-start justify-center rounded-2xl border px-3 py-2 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+-        active ? "border-primary bg-primary/10" : "border-border bg-card hover:border-primary",
++        "relative flex min-h-14 flex-col items-start justify-center rounded-xl border px-3 py-2 text-left transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.99] motion-reduce:transform-none",
++        active
++          ? "border-primary bg-primary/20 shadow-[0_2px_8px_color-mix(in_oklch,var(--primary)_18%,transparent)]"
++          : "border-border/70 bg-card/80 hover:border-primary hover:bg-secondary/15",
+       )}
+     >
+       <span
+         className={cn(
+-          "text-xl font-black leading-none",
++          "text-lg font-black tabular-nums leading-none",
+           danger && value > 0 ? "text-destructive" : "text-foreground",
+         )}
+       >
+@@ -251,6 +256,12 @@ function MetricCard({
+       <span className="mt-1 text-[11px] font-semibold leading-tight text-muted-foreground">
+         {label}
+       </span>
++      {active && (
++        <span
++          className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary"
++          aria-hidden="true"
++        />
++      )}
+     </button>
+   );
+ }
+diff --git a/src/components/owner/OwnerKitchenView.tsx b/src/components/owner/OwnerKitchenView.tsx
+index d66eab1..d898b12 100644
+--- a/src/components/owner/OwnerKitchenView.tsx
++++ b/src/components/owner/OwnerKitchenView.tsx
+@@ -1,4 +1,5 @@
+ import { useMemo, useState } from "react";
++import { CircleCheckBig } from "lucide-react";
+ import type { Order, OrderStatus } from "@/lib/order/types";
+ import { selectKitchenQueues, type OperationalTicketView } from "@/lib/order/operational-view";
+ import { KitchenTicket } from "./KitchenTicket";
+@@ -28,7 +29,7 @@ export function OwnerKitchenView({
+   const ticketProps = { onOpen, onAdvance, pendingId, highlightId };
+ 
+   return (
+-    <div className="flex flex-col gap-3">
++    <div className="flex flex-col gap-4">
+       {queues.aguardandoConfirmacao > 0 && (
+         <p className="rounded-xl border border-dashed border-border px-3 py-2 text-[11px] font-semibold text-muted-foreground">
+           {queues.aguardandoConfirmacao} pedido(s) novo(s) aguardando confirmação no Atendimento.
+@@ -65,13 +66,14 @@ export function OwnerKitchenView({
+         ))}
+       </div>
+ 
+-      <div className="grid gap-4 md:grid-cols-2">
++      <div className="grid items-start gap-4 md:grid-cols-2">
+         <Column
+           title="Fila de preparo"
+           hint="Mais antigo primeiro"
+           tickets={queues.fila}
+           visibleOnMobile={segment === "fila"}
+           emptyLabel="Nada na fila."
++          tone="queue"
+           {...ticketProps}
+         />
+         <Column
+@@ -80,15 +82,19 @@ export function OwnerKitchenView({
+           tickets={queues.emPreparo}
+           visibleOnMobile={segment === "preparo"}
+           emptyLabel="Nada em preparo."
++          tone="preparing"
+           {...ticketProps}
+         />
+       </div>
+ 
+       <section
+-        className={cn("md:block", segment === "prontos" ? "block" : "hidden")}
++        className={cn(
++          "rounded-2xl border border-border/70 bg-card/70 p-3 md:block",
++          segment === "prontos" ? "block" : "hidden",
++        )}
+         aria-label="Prontos"
+       >
+-        <h3 className="mb-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
++        <h3 className="mb-2 text-[11px] font-black uppercase tracking-wider text-muted-foreground">
+           Prontos ({queues.prontos.length})
+         </h3>
+         {queues.prontos.length === 0 ? (
+@@ -98,11 +104,12 @@ export function OwnerKitchenView({
+             {queues.prontos.map((view) => (
+               <li
+                 key={view.order.id}
+-                className="flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2"
++                className="flex min-h-11 items-center gap-2 rounded-xl border border-whatsapp/30 bg-whatsapp/5 px-3 py-2"
+               >
++                <CircleCheckBig className="h-4 w-4 shrink-0 text-whatsapp" aria-hidden="true" />
+                 <span className="text-base font-black">{view.order.orderRef}</span>
+                 <span className="text-[11px] font-semibold text-muted-foreground">
+-                  {view.ageLabel} ·{" "}
++                  Handoff · {view.ageLabel} ·{" "}
+                   {view.order.fulfillmentType === "entrega" ? "Entrega" : "Retirada"}
+                 </span>
+                 <button
+@@ -128,6 +135,7 @@ function Column({
+   tickets,
+   emptyLabel,
+   visibleOnMobile,
++  tone,
+   onOpen,
+   onAdvance,
+   pendingId,
+@@ -138,21 +146,45 @@ function Column({
+   tickets: OperationalTicketView[];
+   emptyLabel: string;
+   visibleOnMobile: boolean;
++  tone: "queue" | "preparing";
+   onOpen: (id: string) => void;
+   onAdvance: (id: string, next: OrderStatus) => void;
+   pendingId?: string | null;
+   highlightId?: string | undefined;
+ }) {
+   return (
+-    <section className={cn("md:block", visibleOnMobile ? "block" : "hidden")}>
+-      <h3 className="mb-2 flex items-baseline justify-between gap-2">
+-        <span className="text-xs font-black uppercase tracking-wider text-foreground">
+-          {title} ({tickets.length})
+-        </span>
+-        <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
++    <section
++      className={cn(
++        "relative overflow-hidden rounded-3xl border p-3 pt-4 sm:p-4 sm:pt-5 md:block",
++        tone === "queue" ? "border-primary/35 bg-secondary/20" : "border-accent/25 bg-accent/5",
++        visibleOnMobile ? "block" : "hidden",
++      )}
++    >
++      <span
++        className={cn(
++          "absolute inset-x-0 top-0 h-1",
++          tone === "queue" ? "bg-primary" : "bg-accent",
++        )}
++        aria-hidden="true"
++      />
++      <div className="mb-3 flex items-baseline justify-between gap-2">
++        <h3 className="text-sm font-black text-foreground">
++          {title}
++          <span
++            className={cn(
++              "ml-2 rounded-full px-2 py-0.5 text-[10px]",
++              tone === "queue"
++                ? "bg-primary text-primary-foreground"
++                : "bg-accent text-accent-foreground",
++            )}
++          >
++            {tickets.length}
++          </span>
++        </h3>
++        <span className="text-[9px] font-black uppercase tracking-wider text-muted-foreground">
+           {hint}
+         </span>
+-      </h3>
++      </div>
+       {tickets.length === 0 ? (
+         <p className="rounded-2xl border border-dashed border-border p-5 text-center text-sm text-muted-foreground">
+           {emptyLabel}
+diff --git a/src/lib/order/operational-view.test.ts b/src/lib/order/operational-view.test.ts
+index eecd7d8..27458cc 100644
+--- a/src/lib/order/operational-view.test.ts
++++ b/src/lib/order/operational-view.test.ts
+@@ -182,20 +182,20 @@ describe("projeção Atendimento", () => {
+       fulfillmentType: "entrega",
+       createdAt: minutesBefore(6),
+     }),
+-    order({ id: "prep", orderRef: "X05", status: "preparando", createdAt: minutesBefore(20) }),
+-    order({ id: "calm", orderRef: "X06", status: "confirmado", createdAt: minutesBefore(3) }),
++    order({ id: "prep", orderRef: "X05", status: "preparando", createdAt: minutesBefore(45) }),
++    order({ id: "calm", orderRef: "X06", status: "confirmado", createdAt: minutesBefore(35) }),
+     order({ id: "out", orderRef: "X07", status: "saiu_para_entrega", createdAt: minutesBefore(4) }),
+     order({ id: "done", orderRef: "X08", status: "entregue", createdAt: minutesBefore(90) }),
+   ];
+ 
+-  it("seleciona novos, prontos e envelhecidos, sem duplicatas", () => {
++  it("seleciona somente novos e prontos acionáveis, sem duplicatas", () => {
+     const refs = selectNeedsAction(base, NOW).map((v) => v.order.orderRef);
+     expect(new Set(refs).size).toBe(refs.length);
+     expect(refs).toContain("X01");
+     expect(refs).toContain("X02");
+     expect(refs).toContain("X03");
+     expect(refs).toContain("X04");
+-    expect(refs).toContain("X05");
++    expect(refs).not.toContain("X05");
+     expect(refs).not.toContain("X06");
+     expect(refs).not.toContain("X07");
+     expect(refs).not.toContain("X08");
+@@ -208,8 +208,6 @@ describe("projeção Atendimento", () => {
+     expect(byRef["X01"]?.label).toBe("Confirmar pedido");
+     expect(byRef["X03"]?.label).toBe("Cliente aguardando retirada");
+     expect(byRef["X04"]?.label).toBe("Aguardando entregador");
+-    expect(byRef["X05"]?.kind).toBe("aging");
+-    expect(byRef["X05"]?.label).toBe("20 min desde o pedido");
+   });
+ 
+   it("novo atrasado mantém Confirmar pedido e urgência separada", () => {
+@@ -222,14 +220,23 @@ describe("projeção Atendimento", () => {
+   it("ordena por urgência e depois pelo mais antigo", () => {
+     const refs = selectNeedsAction(base, NOW).map((v) => v.order.orderRef);
+     expect(refs[0]).toBe("X02");
+-    expect(refs[1]).toBe("X05");
++    expect(refs[1]).toBe("X04");
+   });
+ 
+-  it("Em andamento exclui a fila prioritária e os terminais", () => {
++  it("confirmado e preparando overdue ficam em Em andamento", () => {
+     const refs = selectInProgress(base, NOW).map((v) => v.order.orderRef);
+-    expect(refs.sort()).toEqual(["X06", "X07"]);
++    expect(refs).toContain("X05");
++    expect(refs).toContain("X06");
++    expect(refs).toContain("X07");
++    expect(refs).not.toContain("X08");
++    expect(selectInProgress(base, NOW).find((v) => v.order.orderRef === "X05")?.urgency).toBe(
++      "overdue",
++    );
++    expect(selectInProgress(base, NOW).find((v) => v.order.orderRef === "X06")?.urgency).toBe(
++      "overdue",
++    );
+     const priority = new Set(selectNeedsAction(base, NOW).map((v) => v.order.id));
+-    expect(refs.some((r) => priority.has(r))).toBe(false);
++    expect(selectInProgress(base, NOW).some((v) => priority.has(v.order.id))).toBe(false);
+   });
+ 
+   it("resumo conta as métricas factuais", () => {
+@@ -238,7 +245,7 @@ describe("projeção Atendimento", () => {
+       em_producao: 1,
+       pickup_pronto: 1,
+       delivery_pronto: 1,
+-      atrasados: 1,
++      atrasados: 3,
+       total_ativo: 7,
+     });
+   });
+@@ -266,7 +273,7 @@ describe("projeção Atendimento", () => {
+     selectInProgress(base, NOW);
+     selectKitchenQueues(base, NOW);
+     selectFrontCounterSummary(base, NOW);
+-    expect(frontCounterReasonOf(base[7] as Order, NOW)).toBeNull();
++    expect(frontCounterReasonOf(base[7] as Order)).toBeNull();
+     expect(JSON.stringify(base)).toBe(snapshot);
+   });
+ 
+diff --git a/src/lib/order/operational-view.ts b/src/lib/order/operational-view.ts
+index 15fcc17..fb4ef6b 100644
+--- a/src/lib/order/operational-view.ts
++++ b/src/lib/order/operational-view.ts
+@@ -182,7 +182,7 @@ export function selectOperational(
+  * ============================================================ */
+ 
+ /** Motivo pelo qual o pedido está na fila de ação do atendimento. */
+-export type FrontCounterReasonKind = "confirm" | "pickupWaiting" | "deliveryWaiting" | "aging";
++export type FrontCounterReasonKind = "confirm" | "pickupWaiting" | "deliveryWaiting";
+ 
+ export interface FrontCounterReason {
+   kind: FrontCounterReasonKind;
+@@ -193,8 +193,13 @@ export interface FrontCounterItemView extends OperationalTicketView {
+   reason: FrontCounterReason;
+ }
+ 
+-/** Precedência fixa: confirmar > retirada aguardando > entregador > envelhecimento. */
+-export function frontCounterReasonOf(order: Order, now: number): FrontCounterReason | null {
++/**
++ * Motivos acionáveis pelo Atendimento.
++ *
++ * Aging/urgência são informação operacional, não actionability: um pedido em
++ * produção não muda de responsável só porque envelheceu.
++ */
++export function frontCounterReasonOf(order: Order): FrontCounterReason | null {
+   if (!isActive(order)) return null;
+   if (order.status === "novo") return { kind: "confirm", label: "Confirmar pedido" };
+   if (order.status === "pronto") {
+@@ -202,33 +207,30 @@ export function frontCounterReasonOf(order: Order, now: number): FrontCounterRea
+       ? { kind: "pickupWaiting", label: "Cliente aguardando retirada" }
+       : { kind: "deliveryWaiting", label: "Aguardando entregador" };
+   }
+-  if (urgencyOf(order, now) !== "normal") {
+-    return { kind: "aging", label: `${ageMinutes(order, now)} min desde o pedido` };
+-  }
+   return null;
+ }
+ 
+-export function needsAction(order: Order, now: number): boolean {
+-  return frontCounterReasonOf(order, now) !== null;
++export function needsAction(order: Order): boolean {
++  return frontCounterReasonOf(order) !== null;
+ }
+ 
+ /** Fila "Precisa de ação": sem duplicatas, ordenada por urgência/idade/ref. */
+ export function selectNeedsAction(orders: Order[], now: number): FrontCounterItemView[] {
+   const seen = new Set<string>();
+   const picked = orders.filter((o) => {
+-    if (seen.has(o.id) || !needsAction(o, now)) return false;
++    if (seen.has(o.id) || !needsAction(o)) return false;
+     seen.add(o.id);
+     return true;
+   });
+   return sortOperational(picked, now).map((o) => ({
+     ...toTicketView(o, now),
+-    reason: frontCounterReasonOf(o, now) as FrontCounterReason,
++    reason: frontCounterReasonOf(o) as FrontCounterReason,
+   }));
+ }
+ 
+ /** "Em andamento": ativos que NÃO estão na fila prioritária. */
+ export function selectInProgress(orders: Order[], now: number): OperationalTicketView[] {
+-  const active = orders.filter((o) => isActive(o) && !needsAction(o, now));
++  const active = orders.filter((o) => isActive(o) && !needsAction(o));
+   return sortOperational(active, now).map((o) => toTicketView(o, now));
+ }
+ 
