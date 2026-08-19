@@ -7,7 +7,7 @@
 | -------------------------- | ------------------------------------------------------ |
 | Official repository        | `framixor/scooby-dog-orders`                           |
 | Integration/Lovable branch | `develop`                                              |
-| `develop` at review        | `6ac53a1271311153992c10d29a89288698dd2cb7`             |
+| `develop` at review        | `6a1e8752e47684ae82cd4f4636e773e0c9def183`             |
 | `main` at review           | `86269f0df528d9c313efa46033813487bb4f66e7`             |
 | Active slice               | Issue #26 — Customer success + tracking polish         |
 | Known Lovable backend      | Supabase STAGING, using existing client-safe contracts |

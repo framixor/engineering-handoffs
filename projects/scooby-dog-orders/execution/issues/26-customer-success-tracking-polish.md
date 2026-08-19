@@ -7,7 +7,7 @@
 - Bounded stream: **Framixor Commerce / Scooby Dog**
 - Type: frontend / UX / customer success / tracking polish
 - Mirror synchronized: **2026-08-19**
-- Product base observed: `develop@6ac53a1271311153992c10d29a89288698dd2cb7`
+- Product base observed: `develop@6a1e8752e47684ae82cd4f4636e773e0c9def183`
 
 This is the public execution mirror for a private GitHub issue that Lovable cannot read directly. It
 does not replace the private issue or the product repository. The functional issue text plus the
@@ -84,15 +84,20 @@ These are requirements, not loose inspiration.
 ### Entregue
 
 - Celebratory terminal state.
-- Use a separate illustration of a happy Scooby-Doo handing the customer a hot dog or package as
-  the tenant-specific terminal hero.
-- `public/logo.png` is an identity reference, not the tracker hero; do not enlarge the complete logo
-  as a substitute for the illustration.
-- Completed rail/nodes switch to success green, while the surrounding surface remains light.
-- Final node is dominant and contains a clear check.
+- Do not create or require a new Scooby-Doo asset for this slice.
+- Reuse the existing animated/pulsing hot dog as the terminal hero.
+- Add an unmistakable green success check/badge overlaid on or clearly associated with the hero.
+- `public/logo.png` is an identity reference, not the tracker hero; do not use the complete logo as
+  a substitute.
+- Completed rail/nodes switch to success green, while the surrounding page/tracker surface remains
+  light.
+- Final node is dominant, contains a clear check and has no visual continuation after it.
+- The hot dog success animation may be adapted, but must respect `prefers-reduced-motion`.
 - Completion copy remains prominent and no visual continuation follows the final node.
-- The asset stays in Scooby Dog presentation/configuration and must not enter generic Commerce
-  domain or shared components.
+
+**Dedicated Scooby-Doo delivery artwork is deferred future polish and is not required to close
+Issue #26.** The tenant-specific Scooby Dog brand boundary remains valid; this decision only reduces
+the acceptance scope of this slice.
 
 ### Avoid
 
@@ -120,7 +125,14 @@ Copy:
 CTA: **Avaliar no Google**
 
 The destination comes from store/tenant configuration. Do not hardcode the URL in a component and
-do not invent review data.
+do not invent review data. For this slice, use the current public Google Maps/Business listing URL
+as client-safe product configuration:
+
+`https://www.google.com/maps/place/Scooby+Dog/@-21.7870899,-46.5501441,748m/data=!3m1!1e3!4m14!1m7!3m6!1s0x94c9dd91c06844d5:0x301d9576ae3133d0!2sScooby+Dog!8m2!3d-21.7870949!4d-46.5475692!16s%2Fg%2F11ms7lx0yr!3m5!1s0x94c9dd91c06844d5:0x301d9576ae3133d0!8m2!3d-21.7870949!4d-46.5475692!16s%2Fg%2F11ms7lx0yr?entry=ttu&g_ep=EgoyMDI2MDgxNi4wIKXMDSoASAFQAw%3D%3D`
+
+This is a public listing URL, not a direct-review URL. Do not invent or claim a direct-review link.
+It may later be replaced by an official Google Business Profile review URL. This remains product
+configuration: do not create a migration, column, schema or backend contract for it.
 
 ### Instagram
 
