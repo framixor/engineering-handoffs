@@ -1,13 +1,15 @@
-# Current handoff
+# Current execution contract
 
-Status: **ready for Lovable capability review and reconciliation**.
+Status: **active slice contract; implementation requires round-specific authorization**.
 
-Read in this order:
+Current slice:
 
-1. [`handoffs/2026-08-16-atendimento-cozinha/BASELINE.md`](handoffs/2026-08-16-atendimento-cozinha/BASELINE.md)
-2. [`handoffs/2026-08-16-atendimento-cozinha/BRIEF.md`](handoffs/2026-08-16-atendimento-cozinha/BRIEF.md)
-3. [`handoffs/2026-08-16-atendimento-cozinha/ACCEPTANCE.md`](handoffs/2026-08-16-atendimento-cozinha/ACCEPTANCE.md)
-4. [`handoffs/2026-08-16-atendimento-cozinha/APPROVED_UI.patch`](handoffs/2026-08-16-atendimento-cozinha/APPROVED_UI.patch)
-5. [`handoffs/2026-08-16-atendimento-cozinha/SHA256SUMS`](handoffs/2026-08-16-atendimento-cozinha/SHA256SUMS)
+- [Issue #26 — Customer success + tracking polish](execution/issues/26-customer-success-tracking-polish.md)
 
-Do not execute an older handoff unless the user explicitly reactivates it.
+This pointer supersedes the old operational pointer to
+`handoffs/2026-08-16-atendimento-cozinha/`. That dated package remains intact as historical evidence
+and is not active.
+
+Reading this pointer is not authorization to edit, commit directly to `develop`, merge, deploy or
+touch an environment. Complete `execution/AGENT_BOOTSTRAP.md` and obey the authorization given in
+the current round.
