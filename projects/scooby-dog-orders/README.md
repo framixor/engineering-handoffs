@@ -1,15 +1,18 @@
 # Scooby Dog Orders — start here
 
-> **Operational mirror.** This directory makes the minimum Framixor governance available to agents
-> that cannot read `/home/andreloiola/framixor`. It does not replace canonical workspace governance,
-> the private GitHub issue, or the official product repository.
+> **Governed portable mirror.** This directory records reviewed derived context. It does not replace
+> canonical workspace governance, the source issue, or the official product repository.
 
 Official product repository: [`framixor/scooby-dog-orders`](https://github.com/framixor/scooby-dog-orders).
 GitHub and that repository remain authoritative for promoted code and behavior. If this mirror
 conflicts with current Git, deployment evidence or canonical Framixor governance, stop and report
 the conflict.
 
-## Mandatory reading order
+Repo-scoped external agents must be able to bootstrap from `docs/AGENT_BOOTSTRAP.md` inside the
+product repository without reading this sibling repository. This mirror supports review,
+provenance and richer handoffs; it is not a runtime dependency of that bootstrap.
+
+## Mandatory reading order for mirror consumers
 
 Before editing product code, read completely:
 
@@ -17,7 +20,7 @@ Before editing product code, read completely:
 2. [`governance/MIRROR_MANIFEST.md`](governance/MIRROR_MANIFEST.md)
 3. [`STATE.md`](STATE.md)
 4. [`CURRENT.md`](CURRENT.md)
-5. the active slice linked by `CURRENT.md`
+5. the active slice linked by `CURRENT.md`, if one exists
 6. [`execution/AGENT_BOOTSTRAP.md`](execution/AGENT_BOOTSTRAP.md)
 7. `AGENTS.md`, `BRAND.md`, `REUSE.md`, `STATE.md` and other applicable contracts in the product repo
 
