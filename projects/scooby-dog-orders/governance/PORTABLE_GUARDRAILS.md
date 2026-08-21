@@ -50,4 +50,20 @@
   reusable Commerce components or shared platform code.
 - Use existing primitives, tokens and gates. Do not invent a parallel architecture.
 
+## Frontend visual process
+
+- Existing product first: inspect the current surface, reusable components, tokens, `BRAND.md`,
+  `REUSE.md` and approved patterns before proposing UI.
+- shadcn/ui over Radix is the foundation when already adopted and compatible. Preserve the existing
+  design system. Lucide (`lucide-react`) is the current icon set; preserve it rather than mixing
+  libraries casually.
+- 21st.dev is the priority discovery/reference surface; Animista may support selective
+  microanimations with `prefers-reduced-motion`.
+- External research is not adoption and does not authorize dependency changes. Evaluate technical
+  compatibility, accessibility, weight, maintenance, tokens and brand fit.
+- Classify visual work as Repair, Refinement or Modeling. Modeling follows
+  `discover → evaluate → candidates → human selection when material → prototype/isolate → adapt → integrate → verify`.
+- A visual task never authorizes reinterpretation of backend, Supabase, tenancy, auth, RLS,
+  migrations or data contracts.
+
 **Agents execute Framixor governance; they do not redefine it.**
