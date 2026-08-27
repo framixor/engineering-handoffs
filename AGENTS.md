@@ -1,7 +1,9 @@
 # Agent instructions
 
 - Treat this repository as a handoff catalog, never as canonical product source code.
-- Before using a handoff, read the project's `CURRENT.md` and all files it references.
+- For the generated engineering entrypoint, consume `HANDOFF_ENGINEERING.json` or its generated
+  Markdown rendering and load only task-relevant authoritative references. Before executing a
+  dated/active slice, still read `CURRENT.md` and every file it references.
 - Always fetch and inspect the target repository before planning or implementation.
 - A baseline mismatch requires reconciliation; never overwrite newer remote work blindly.
 - Do not redesign or reinterpret an approved UI unless the handoff explicitly authorizes it.

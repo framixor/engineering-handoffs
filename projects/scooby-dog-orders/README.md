@@ -12,6 +12,19 @@ Repo-scoped external agents must be able to bootstrap from `docs/AGENT_BOOTSTRAP
 product repository without reading this sibling repository. This mirror supports review,
 provenance and richer handoffs; it is not a runtime dependency of that bootstrap.
 
+## Generated engineering entrypoint
+
+- [`HANDOFF_ENGINEERING.json`](HANDOFF_ENGINEERING.json) is the machine-readable derived contract.
+- [`HANDOFF_ENGINEERING.md`](HANDOFF_ENGINEERING.md) is generated deterministically from that JSON.
+
+External executors may start with either representation and then load only the task-relevant
+authoritative references it identifies. Neither artifact grants authority to modify Git, product
+code, environments or data.
+
+The manual `MIRROR_MANIFEST.md`, `PORTABLE_GUARDRAILS.md`, bootstrap and dated handoffs remain
+preserved for historical reconciliation and active-slice workflows. They are planned for later
+deprecation as the general external entrypoint, but are not removed or rewritten in this slice.
+
 ## Mandatory reading order for mirror consumers
 
 Before editing product code, read completely:
