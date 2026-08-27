@@ -215,7 +215,7 @@
   "provenance": {
     "operating_model": {
       "repository": "https://github.com/framixor/framixor-agent-operating-model",
-      "canonical_ref": "refs/tags/framixor-agent-model-v1",
+      "canonical_ref": "refs/heads/main",
       "commit": "7ee79286626360800abfbd96daddf38f0dcbc7c3"
     },
     "product": {
@@ -225,7 +225,7 @@
     },
     "publication_profile": {
       "path": "agent/handoffs/products/scooby-dog-orders.public-input.v1.json",
-      "sha256": "772e537519a69f0fa39eb3af2e32361634ca931f959a577a9e33f3bb83306c91"
+      "sha256": "b861daca652a18eadbdabb14553c58ad7506bdd39a6d3833cc75c393cdb41cc9"
     },
     "source_allowlist": {
       "path": "agent/handoffs/source-allowlist.v1.json",

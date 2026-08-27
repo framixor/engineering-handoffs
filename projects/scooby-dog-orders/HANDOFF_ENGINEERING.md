@@ -97,10 +97,10 @@ This handoff is a derived public-safe execution aid, not canonical governance or
 
 | Source | Repository | Ref | Commit |
 | --- | --- | --- | --- |
-| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/tags/framixor-agent-model-v1` | `7ee79286626360800abfbd96daddf38f0dcbc7c3` |
+| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/heads/main` | `7ee79286626360800abfbd96daddf38f0dcbc7c3` |
 | Product | https://github.com/framixor/scooby-dog-orders | `refs/heads/main` | `d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f` |
 
-- Publication profile: `agent/handoffs/products/scooby-dog-orders.public-input.v1.json` — `772e537519a69f0fa39eb3af2e32361634ca931f959a577a9e33f3bb83306c91`
+- Publication profile: `agent/handoffs/products/scooby-dog-orders.public-input.v1.json` — `b861daca652a18eadbdabb14553c58ad7506bdd39a6d3833cc75c393cdb41cc9`
 - Source allowlist: `agent/handoffs/source-allowlist.v1.json` — `9cab45c80b27c745580e81dd33405d47fefeaafd5b5a08bf1cd68defe4b55426`
 
 | Source class | Artifact | SHA-256 |
