@@ -97,10 +97,10 @@ This handoff is a derived public-safe execution aid, not canonical governance or
 
 | Source | Repository | Ref | Commit |
 | --- | --- | --- | --- |
-| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/heads/main` | `7ee79286626360800abfbd96daddf38f0dcbc7c3` |
+| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/heads/main` | `5ccde68e51b239126b7ded2c6bc928b795f1152e` |
 | Product | https://github.com/framixor/scooby-dog-orders | `refs/heads/main` | `d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f` |
 
-- Publication profile: `agent/handoffs/products/scooby-dog-orders.public-input.v1.json` — `b861daca652a18eadbdabb14553c58ad7506bdd39a6d3833cc75c393cdb41cc9`
+- Publication profile: `agent/handoffs/products/scooby-dog-orders.public-input.v1.json` — `1392e4a60c30afe5031fc4d3e084c148e71ba56210a9e930d9c2ebe5b94ba9ae`
 - Source allowlist: `agent/handoffs/source-allowlist.v1.json` — `9cab45c80b27c745580e81dd33405d47fefeaafd5b5a08bf1cd68defe4b55426`
 
 | Source class | Artifact | SHA-256 |
@@ -110,7 +110,7 @@ This handoff is a derived public-safe execution aid, not canonical governance or
 | `operating_model` | `agent/capabilities/framixor-frontend/PROCEDURE.md` | `079a7e1243db360b366bb4901484f356826ff85f6f239d3c7f8d3d6c63a86f0d` |
 | `operating_model` | `agent/capabilities/framixor-task-preflight/PROCEDURE.md` | `be4e8a70e402e92f65a6118e0f2c0a78003ac9b68249293d376714386cd2efdd` |
 | `operating_model` | `agent/capabilities/framixor-verification/PROCEDURE.md` | `dc627753a32d2ad1e4dd2e1dec3df829edf1f89eed9df3f8d4dbbe824da5a923` |
-| `operating_model` | `agent/manifest.json` | `9a24d4633afe3867026de71063a24688b30f6a4ddfdf30b68ddcd5616c83a296` |
+| `operating_model` | `agent/manifest.json` | `b97a11236f6b27f56ca02743673c10c6cf175344901e9bf638d239b13e9e5b72` |
 | `operating_model` | `governance/AGENT_EXECUTION_CONTRACT.md` | `f28dae5cfca8029447a234c89f27a1a647552469d1bfd3a2d8cba7d86a9fe7f2` |
 | `operating_model` | `governance/FRONTEND_VISUAL_CONTRACT.md` | `71bb965d0b492ee082487695158425e23d7aa9f05f1e6af59dabf3dcf5d909eb` |
 | `product` | `AGENTS.md` | `c499f2be4e4cd1b60aeba49ceac29eb58da37408268f228e55f2df951007c17a` |
