@@ -8,6 +8,12 @@ artifacts for an implementation agent to reconcile into that repository.
 
 ## How to consume a handoff
 
+For compact, vendor-neutral engineering context, start with the product's generated
+`HANDOFF_ENGINEERING.md` or machine-readable `HANDOFF_ENGINEERING.json`. It contains only the
+reviewed public-safe scope and provenance needed to classify and constrain a task.
+
+For an active or dated implementation package:
+
 1. Open the target project under `projects/`.
 2. Read its `CURRENT.md`; do not assume the latest directory name is active.
 3. Read every file referenced by `CURRENT.md` before changing product code.
@@ -21,7 +27,8 @@ See [HANDOFF_PROTOCOL.md](standards/HANDOFF_PROTOCOL.md) and
 
 ## Projects
 
-- [Scooby Dog Orders](projects/scooby-dog-orders/README.md)
+- [Scooby Dog Orders](projects/scooby-dog-orders/README.md) —
+  [generated engineering handoff](projects/scooby-dog-orders/HANDOFF_ENGINEERING.md)
 
 ## Security
 

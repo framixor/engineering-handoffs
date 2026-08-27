@@ -1,0 +1,307 @@
+{
+  "schema_version": "framixor.public-engineering-handoff.v1",
+  "classification": "DERIVED_PUBLIC_SAFE",
+  "operating_model_version": "1",
+  "product": {
+    "id": "scooby-dog-orders",
+    "name": "Scooby Dog Orders",
+    "repository": "https://github.com/framixor/scooby-dog-orders",
+    "canonical_ref": "refs/heads/main",
+    "commit": "d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f"
+  },
+  "authority": {
+    "statement": "This handoff is a derived public-safe execution aid, not canonical governance or product source.",
+    "conflict_rule": "Canonical Framixor governance, official product Git state and explicit current-run authorization prevail; stop on conflict.",
+    "authorization_rule": "This handoff grants no permission to write, push, merge, deploy or mutate an environment."
+  },
+  "task_class_guidance": [
+    {
+      "id": "general_implementation",
+      "summary": "Use for bounded non-visual product changes. The task/run must still declare exact paths, effects and verification.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "visual_exploration",
+      "summary": "Explore visual candidates only inside an explicitly isolated scope; exploration is not promotion or permission to rewrite the product.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "faithful_visual_refactor",
+      "summary": "Implement an approved visual direction faithfully. Preserve behavior and identity; do not invent a replacement direction.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "new_ui_feature",
+      "summary": "Add a bounded UI capability using the existing design system, data seams and product contracts.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "component_implementation",
+      "summary": "Implement or refine a component within existing tokens, primitives and accessibility expectations.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "product_redesign",
+      "summary": "Requires explicit redesign authority and human approval of material visual direction; it is never inferred from a normal frontend request.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    },
+    {
+      "id": "visual_bugfix",
+      "summary": "Repair a specific visual defect while minimizing change and preserving surrounding behavior and styling.",
+      "required_capabilities": [
+        "framixor-task-preflight",
+        "framixor-frontend",
+        "framixor-verification"
+      ],
+      "required_gates": [
+        "task-envelope",
+        "repository-identity",
+        "scope",
+        "frontend-domain-evidence",
+        "evidence-bundle"
+      ],
+      "write_budget": "bounded"
+    }
+  ],
+  "applicable_capabilities": [
+    {
+      "id": "framixor-frontend",
+      "summary": "Load Scooby identity and existing UI foundations, define the allowed-change envelope, then require rendered evidence for material visual work."
+    },
+    {
+      "id": "framixor-task-preflight",
+      "summary": "Prove repository/ref, classify the task, declare environment and effects, and establish bounded scope before writing."
+    },
+    {
+      "id": "framixor-verification",
+      "summary": "Recheck identity and scope, run repository and domain gates, and report PASS, FAIL or INCONCLUSIVE with evidence."
+    }
+  ],
+  "product_governance_references": [
+    {
+      "label": "Scooby repository rules",
+      "url": "https://github.com/framixor/scooby-dog-orders/blob/d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f/AGENTS.md"
+    },
+    {
+      "label": "Scooby repo-scoped bootstrap",
+      "url": "https://github.com/framixor/scooby-dog-orders/blob/d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f/docs/AGENT_BOOTSTRAP.md"
+    },
+    {
+      "label": "Scooby brand contract",
+      "url": "https://github.com/framixor/scooby-dog-orders/blob/d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f/BRAND.md"
+    },
+    {
+      "label": "Scooby reuse boundaries",
+      "url": "https://github.com/framixor/scooby-dog-orders/blob/d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f/REUSE.md"
+    },
+    {
+      "label": "Scooby dated engineering state",
+      "url": "https://github.com/framixor/scooby-dog-orders/blob/d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f/STATE.md"
+    }
+  ],
+  "authority_boundaries": {
+    "frontend": [
+      "Frontend work may change only the authorized product paths and behavior described by the current task/run.",
+      "Use existing ports/adapters, configuration, tokens, shadcn/Radix foundations and Lucide icons where applicable.",
+      "Material visual work is incomplete without running the application and inspecting rendered results."
+    ],
+    "backend_database": [
+      "A frontend task does not authorize schema, migration, RLS, grants, RPC, auth, tenant, service-role or shared-platform changes.",
+      "If a frontend task discovers a backend or database gap, implement only independent frontend-safe work, report the gap and stop that portion.",
+      "No database mode, environment mutation or PROD operation is authorized by this handoff."
+    ]
+  },
+  "must_preserve": [
+    "Official Git history and Lovable-connected published history; never rewrite it.",
+    "The config-driven restaurant boundary and the existing UI-to-ports/adapters data seam.",
+    "Scooby's mobile-first identity: saturated yellow, teal accents, light surfaces, Poppins and direct non-SaaS voice.",
+    "Tenant-specific brand assets must not leak into reusable Commerce domain or shared components.",
+    "Existing order, pricing, tracking, authentication and tenant behavior unless the task explicitly authorizes a compatible change."
+  ],
+  "forbidden_actions": [
+    "Do not expose credentials, environment values, customer data, signed URLs or private infrastructure identifiers.",
+    "Do not change backend/database contracts, migrations, RLS, auth, tenant boundaries or shared platform from a frontend task.",
+    "Do not push, merge, deploy, promote or mutate TEST, STAGING or PROD without explicit run-specific authorization.",
+    "Do not replay closed historical slices or treat this derived handoff as product authority.",
+    "Do not load or infer unrelated product or platform context without a dependency established by the current task."
+  ],
+  "allowed_external_scope": [
+    "Read this handoff and the referenced Scooby files available to the executor.",
+    "Inspect the current official Scooby repository/ref and targeted implementation before proposing changes.",
+    "Perform only the task/run's explicit allowed paths and external effects; this handoff grants none by itself.",
+    "Return candidate changes and evidence for Framixor review and promotion."
+  ],
+  "verification_expectations": [
+    "Revalidate official repository, canonical ref/base, worktree, environment, changed files and authorized scope.",
+    "Run format:check, lint, typecheck, test and build in that order for code changes.",
+    "For material frontend work, run the application, inspect the rendered result and provide viewport/state evidence.",
+    "Report every required gate as PASS, FAIL or INCONCLUSIVE; missing evidence never becomes PASS."
+  ],
+  "current_status": [
+    "The generated baseline is the exact official Scooby ref and commit recorded in Identity and Provenance.",
+    "No implementation task is activated by this handoff; a separate task/run must provide scope and authorization.",
+    "The official product repository remains authoritative for code and behavior; this artifact is a compact derived engineering contract."
+  ],
+  "provenance": {
+    "operating_model": {
+      "repository": "https://github.com/framixor/framixor-agent-operating-model",
+      "canonical_ref": "refs/tags/framixor-agent-model-v1",
+      "commit": "7ee79286626360800abfbd96daddf38f0dcbc7c3"
+    },
+    "product": {
+      "repository": "https://github.com/framixor/scooby-dog-orders",
+      "canonical_ref": "refs/heads/main",
+      "commit": "d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f"
+    },
+    "publication_profile": {
+      "path": "agent/handoffs/products/scooby-dog-orders.public-input.v1.json",
+      "sha256": "772e537519a69f0fa39eb3af2e32361634ca931f959a577a9e33f3bb83306c91"
+    },
+    "source_allowlist": {
+      "path": "agent/handoffs/source-allowlist.v1.json",
+      "sha256": "9cab45c80b27c745580e81dd33405d47fefeaafd5b5a08bf1cd68defe4b55426"
+    },
+    "source_artifacts": [
+      {
+        "source": "operating_model",
+        "path": "AGENTS.md",
+        "sha256": "5babc1753f3361e135a5b9ccca100a6138da5309d9359b088b45c0c324ce6248"
+      },
+      {
+        "source": "operating_model",
+        "path": "MODEL_VERSION",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      {
+        "source": "operating_model",
+        "path": "agent/capabilities/framixor-frontend/PROCEDURE.md",
+        "sha256": "079a7e1243db360b366bb4901484f356826ff85f6f239d3c7f8d3d6c63a86f0d"
+      },
+      {
+        "source": "operating_model",
+        "path": "agent/capabilities/framixor-task-preflight/PROCEDURE.md",
+        "sha256": "be4e8a70e402e92f65a6118e0f2c0a78003ac9b68249293d376714386cd2efdd"
+      },
+      {
+        "source": "operating_model",
+        "path": "agent/capabilities/framixor-verification/PROCEDURE.md",
+        "sha256": "dc627753a32d2ad1e4dd2e1dec3df829edf1f89eed9df3f8d4dbbe824da5a923"
+      },
+      {
+        "source": "operating_model",
+        "path": "agent/manifest.json",
+        "sha256": "9a24d4633afe3867026de71063a24688b30f6a4ddfdf30b68ddcd5616c83a296"
+      },
+      {
+        "source": "operating_model",
+        "path": "governance/AGENT_EXECUTION_CONTRACT.md",
+        "sha256": "f28dae5cfca8029447a234c89f27a1a647552469d1bfd3a2d8cba7d86a9fe7f2"
+      },
+      {
+        "source": "operating_model",
+        "path": "governance/FRONTEND_VISUAL_CONTRACT.md",
+        "sha256": "71bb965d0b492ee082487695158425e23d7aa9f05f1e6af59dabf3dcf5d909eb"
+      },
+      {
+        "source": "product",
+        "path": "AGENTS.md",
+        "sha256": "c499f2be4e4cd1b60aeba49ceac29eb58da37408268f228e55f2df951007c17a"
+      },
+      {
+        "source": "product",
+        "path": "BRAND.md",
+        "sha256": "ce9cbc777034b93be010fd71346ac291fc826f587c7f1612dfd45180eb0d54e0"
+      },
+      {
+        "source": "product",
+        "path": "REUSE.md",
+        "sha256": "484e13758ad9a975b37f74b11c547caf614947fd22289d5a9da1e3a2a6c91ea8"
+      },
+      {
+        "source": "product",
+        "path": "STATE.md",
+        "sha256": "38db1327e96946afffc68e042c871a6f4c5280b3e5fec3b9ecac9b6ea0972dc5"
+      },
+      {
+        "source": "product",
+        "path": "docs/AGENT_BOOTSTRAP.md",
+        "sha256": "38e15e0a744b842277f03ac7179186557ae22a91e30214a292e700d86b7c6874"
+      },
+      {
+        "source": "product",
+        "path": "package.json",
+        "sha256": "e0c2700a810f1f44748e87d1667a21fc09241773c50eab802c9d0a892d0d718c"
+      }
+    ]
+  }
+}
