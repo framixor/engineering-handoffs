@@ -97,7 +97,7 @@ This handoff is a derived public-safe execution aid, not canonical governance or
 
 | Source | Repository | Ref | Commit |
 | --- | --- | --- | --- |
-| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/heads/main` | `40cf255eb445b81846010637c6159d9b2769043a` |
+| Operating model | https://github.com/framixor/framixor-agent-operating-model | `refs/heads/main` | `c2a00419078169a4188338913d3e0296889bc12f` |
 | Product | https://github.com/framixor/scooby-dog-orders | `refs/heads/main` | `d29cc1a758e08ab1e1ffb8e41a65c11d7cb9b74f` |
 
 - Publication profile: `agent/handoffs/products/scooby-dog-orders.public-input.v1.json` — `1392e4a60c30afe5031fc4d3e084c148e71ba56210a9e930d9c2ebe5b94ba9ae`
@@ -110,7 +110,7 @@ This handoff is a derived public-safe execution aid, not canonical governance or
 | `operating_model` | `agent/capabilities/framixor-frontend/PROCEDURE.md` | `079a7e1243db360b366bb4901484f356826ff85f6f239d3c7f8d3d6c63a86f0d` |
 | `operating_model` | `agent/capabilities/framixor-task-preflight/PROCEDURE.md` | `be4e8a70e402e92f65a6118e0f2c0a78003ac9b68249293d376714386cd2efdd` |
 | `operating_model` | `agent/capabilities/framixor-verification/PROCEDURE.md` | `dc627753a32d2ad1e4dd2e1dec3df829edf1f89eed9df3f8d4dbbe824da5a923` |
-| `operating_model` | `agent/manifest.json` | `cc0567f1c4244a5166d4c4160de376bbe38c04404793536617fcbc18476a1220` |
+| `operating_model` | `agent/manifest.json` | `ed5b083d4cfea43a4b0bb4a9f750ffea9f4de654be0bc5f8d5cb86bf5b7c49e1` |
 | `operating_model` | `governance/AGENT_EXECUTION_CONTRACT.md` | `f28dae5cfca8029447a234c89f27a1a647552469d1bfd3a2d8cba7d86a9fe7f2` |
 | `operating_model` | `governance/FRONTEND_VISUAL_CONTRACT.md` | `71bb965d0b492ee082487695158425e23d7aa9f05f1e6af59dabf3dcf5d909eb` |
 | `product` | `AGENTS.md` | `c499f2be4e4cd1b60aeba49ceac29eb58da37408268f228e55f2df951007c17a` |

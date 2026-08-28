@@ -216,7 +216,7 @@
     "operating_model": {
       "repository": "https://github.com/framixor/framixor-agent-operating-model",
       "canonical_ref": "refs/heads/main",
-      "commit": "40cf255eb445b81846010637c6159d9b2769043a"
+      "commit": "c2a00419078169a4188338913d3e0296889bc12f"
     },
     "product": {
       "repository": "https://github.com/framixor/scooby-dog-orders",
@@ -260,7 +260,7 @@
       {
         "source": "operating_model",
         "path": "agent/manifest.json",
-        "sha256": "cc0567f1c4244a5166d4c4160de376bbe38c04404793536617fcbc18476a1220"
+        "sha256": "ed5b083d4cfea43a4b0bb4a9f750ffea9f4de654be0bc5f8d5cb86bf5b7c49e1"
       },
       {
         "source": "operating_model",
