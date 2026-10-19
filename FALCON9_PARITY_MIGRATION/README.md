@@ -2,7 +2,7 @@
 
 Golden Reference confirmado: **Prime 1.33.1, `main@0d05ae1c`**. A V2 deixou a combinação parcial da base `52ae6567` e recebeu as telas/componentes atuais, preservando a identidade Framixor e os contratos nativos. Versão própria: `2.0.0-falcon9`.
 
-PRs abertos contra `main`: [frontend #7](https://github.com/framixor/prime-house-framixor/pull/7), [backend #42](https://github.com/framixor/framixor-supabase/pull/42). Commits Framixor preservados; sem merge/deploy.
+PRs abertos contra `main`: [frontend #7](https://github.com/framixor/prime-house-framixor/pull/7), [backend #42](https://github.com/framixor/framixor-supabase/pull/42). [Checkpoint #6](https://github.com/framixor/engineering-handoffs/pull/6). Commits Framixor preservados; sem merge/deploy.
 
 **READY para revisão de código; CONDITIONAL para homologação STAGING independente; NOT READY para cutover Marley.** [Comparação visual/funcional, evidências e diferenças restantes](FRONTEND_PARITY.md).
 

@@ -1,12 +1,16 @@
 {
   "frontend": {
     "pr": "https://github.com/framixor/prime-house-framixor/pull/7",
-    "head": "f28ed813",
+    "head": "f28ed813e88958017891d5337cd5a577ae6392af",
     "base": "main"
   },
   "backend": {
     "pr": "https://github.com/framixor/framixor-supabase/pull/42",
-    "head": "4e08d31",
+    "head": "4e08d3162bb27b281bbaa55a8458c118bb950411",
+    "base": "main"
+  },
+  "checkpoint": {
+    "pr": "https://github.com/framixor/engineering-handoffs/pull/6",
     "base": "main"
   },
   "merge": false,
