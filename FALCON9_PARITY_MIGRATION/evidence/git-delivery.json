@@ -1,0 +1,15 @@
+{
+  "frontend": {
+    "pr": "https://github.com/framixor/prime-house-framixor/pull/7",
+    "head": "f28ed813",
+    "base": "main"
+  },
+  "backend": {
+    "pr": "https://github.com/framixor/framixor-supabase/pull/42",
+    "head": "4e08d31",
+    "base": "main"
+  },
+  "merge": false,
+  "deploy": false,
+  "remoteDatabaseOperations": false
+}

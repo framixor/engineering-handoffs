@@ -1,0 +1,19 @@
+{
+  "reference": {
+    "branch": "main",
+    "commit": "0d05ae1caf4271ea4c91f207d290ba95a1016ad9",
+    "version": "1.33.1"
+  },
+  "candidates": {
+    "frontend": "f28ed813e88958017891d5337cd5a577ae6392af",
+    "backend": "4e08d3162bb27b281bbaa55a8458c118bb950411"
+  },
+  "compiledImplementationCommit": "884320b2",
+  "compiledSourceMatchesCandidate": true,
+  "frontendVersion": "2.0.0-falcon9",
+  "migrations": 68,
+  "currentImportReaudited": false,
+  "runtime": "Nitro node-server, Docker internal only",
+  "gitOperations": "Framixor GitHub repositories only",
+  "remoteRuntimeOrDatabaseOperations": false
+}

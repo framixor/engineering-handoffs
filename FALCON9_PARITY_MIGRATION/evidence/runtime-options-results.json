@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V2-AUTH-UI-A",
+    "status": "PASS",
+    "detail": "Actual local GoTrue login and persistent V2_LOCAL banner; tenant owner context resolved.",
+    "at": "2026-10-18T22:53:16.588Z"
+  },
+  {
+    "id": "V2-OPTIONS-ACCEPT-PRICE",
+    "status": "PASS",
+    "detail": "Actual UI selected 1500 option; persisted total=1500; accepted snapshot total=1500; selected option ID matches=true.",
+    "at": "2026-10-18T22:53:19.230Z"
+  }
+]

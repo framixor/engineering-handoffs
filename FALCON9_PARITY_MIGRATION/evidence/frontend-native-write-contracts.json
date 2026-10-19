@@ -1,0 +1,5 @@
+{
+  "checkedLiteralWrites": 153,
+  "findings": [],
+  "limit": "Literal object writes only; RPC parameters and dynamically assembled objects require runtime validation."
+}

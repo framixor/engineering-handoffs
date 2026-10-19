@@ -1,0 +1,12 @@
+{
+  "reviewedCandidateFiles": {
+    "frontend": 343,
+    "backend": 143
+  },
+  "findings": {
+    "frontend": [],
+    "backend": []
+  },
+  "donorEnvValuesPrinted": false,
+  "secretsOrDataIncluded": false
+}

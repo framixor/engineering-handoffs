@@ -1,0 +1,62 @@
+[
+  {
+    "id": "V2-AUTH-UI-A",
+    "status": "PASS",
+    "detail": "Actual local GoTrue login and persistent V2_LOCAL banner; tenant owner context resolved.",
+    "at": "2026-10-18T22:50:28.324Z"
+  },
+  {
+    "id": "CRM-CLIENT-CREATE-EDIT-UI",
+    "status": "PASS",
+    "detail": "Real client dialogs created and edited a synthetic record through authenticated Data API.",
+    "at": "2026-10-18T22:50:32.418Z"
+  },
+  {
+    "id": "RICH-SCOPE-UI-SAVE",
+    "status": "PASS",
+    "detail": "Real editor input persisted rich document and plain-text mirror.",
+    "at": "2026-10-18T22:50:35.380Z"
+  },
+  {
+    "id": "AI-SCOPE-GENERATE-IMPROVE-MOCK",
+    "status": "PASS",
+    "detail": "Actual authenticated server functions call the configured own transport; provider mocked; no Lovable key.",
+    "at": "2026-10-18T22:50:35.442Z"
+  },
+  {
+    "id": "AI-OVERVIEW-MOCK",
+    "status": "PASS",
+    "detail": "Authenticated server function used own provider configuration and mocked completion.",
+    "at": "2026-10-18T22:50:35.453Z"
+  },
+  {
+    "id": "AI-VENDOR-INVOICE-MOCK",
+    "status": "PASS",
+    "detail": "Authenticated document server function used own provider/model and parsed synthetic invoice JSON; no external delivery or actual model accuracy claim.",
+    "at": "2026-10-18T22:50:35.472Z"
+  },
+  {
+    "id": "GOOGLE-PLACES-VALIDATION-STATIC-MOCK",
+    "status": "PASS",
+    "detail": "Actual server functions used direct Google adapters; response mocks only, no remote request.",
+    "at": "2026-10-18T22:50:35.516Z"
+  },
+  {
+    "id": "HOSTINGER-EMAIL-SENT-VIEWED-MOCK",
+    "status": "PASS",
+    "detail": "Tenant-bound adapter accepted mock email, recorded Sent, anonymous browser persisted Viewed. No actual delivery.",
+    "at": "2026-10-18T22:50:37.227Z"
+  },
+  {
+    "id": "STORAGE-UPLOAD-SIGNED-READ-CROSS-TENANT-DENY",
+    "status": "PASS",
+    "detail": "Actual private object upload/read/remove; foreign prefix rejected and tenant B download denied.",
+    "at": "2026-10-18T22:50:39.132Z"
+  },
+  {
+    "id": "TENANT-ADMIN-DIRECTORY",
+    "status": "PASS",
+    "detail": "Actual server function returns only current-tenant members without global Auth enumeration.",
+    "at": "2026-10-18T22:50:39.156Z"
+  }
+]

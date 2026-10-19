@@ -1,0 +1,350 @@
+{
+  "status": "PASS",
+  "migrationOwner": "postgres (not superuser)",
+  "appliedCount": 68,
+  "ledger": [
+    {
+      "version": "4000",
+      "name": "platform_foundation"
+    },
+    {
+      "version": "4001",
+      "name": "tenants_authorization"
+    },
+    {
+      "version": "4002",
+      "name": "trusted_context_and_support"
+    },
+    {
+      "version": "4003",
+      "name": "numbering_audit_idempotency"
+    },
+    {
+      "version": "4004",
+      "name": "public_tokens"
+    },
+    {
+      "version": "4005",
+      "name": "bootstrap_amt"
+    },
+    {
+      "version": "4006",
+      "name": "isolation_acceptance"
+    },
+    {
+      "version": "4500",
+      "name": "prime_crm_catalog_estimates"
+    },
+    {
+      "version": "4501",
+      "name": "prime_frontend_dependencies"
+    },
+    {
+      "version": "4502",
+      "name": "prime_donor_parity"
+    },
+    {
+      "version": "4503",
+      "name": "prime_tenant_context_and_estimate_engine"
+    },
+    {
+      "version": "4504",
+      "name": "prime_public_tokens_and_estimate_acceptance"
+    },
+    {
+      "version": "4505",
+      "name": "prime_estimate_revision_and_project_conversion"
+    },
+    {
+      "version": "4506",
+      "name": "prime_ct_home_improvement_contracts"
+    },
+    {
+      "version": "4507",
+      "name": "prime_catalog_invoicing_and_change_orders"
+    },
+    {
+      "version": "4508",
+      "name": "prime_import_context"
+    },
+    {
+      "version": "4509",
+      "name": "prime_tenant_provisioning"
+    },
+    {
+      "version": "4510",
+      "name": "prime_identity_and_branding_rpcs"
+    },
+    {
+      "version": "4511",
+      "name": "prime_option_acceptance_integrity"
+    },
+    {
+      "version": "4512",
+      "name": "prime_financial_domains"
+    },
+    {
+      "version": "4513",
+      "name": "prime_deferred_import_relationships"
+    },
+    {
+      "version": "4514",
+      "name": "prime_current_scope_and_delivery"
+    },
+    {
+      "version": "4515",
+      "name": "prime_current_finance_and_invoice_contracts"
+    },
+    {
+      "version": "4516",
+      "name": "prime_private_storage_and_context"
+    },
+    {
+      "version": "4517",
+      "name": "prime_financial_constraint_and_upsert_integrity"
+    },
+    {
+      "version": "4518",
+      "name": "prime_invoice_public_view"
+    },
+    {
+      "version": "4519",
+      "name": "prime_tenant_member_directory"
+    },
+    {
+      "version": "4520",
+      "name": "prime_core_business_guards"
+    },
+    {
+      "version": "4521",
+      "name": "prime_financial_read_models"
+    },
+    {
+      "version": "4522",
+      "name": "prime_historical_actor_and_audit_integrity"
+    },
+    {
+      "version": "4523",
+      "name": "prime_engine_rls_execution_boundary"
+    },
+    {
+      "version": "4524",
+      "name": "prime_optional_reference_tenant_integrity"
+    },
+    {
+      "version": "4525",
+      "name": "prime_engine_managed_auth_privileges"
+    },
+    {
+      "version": "4526",
+      "name": "prime_current_revision_cost_and_attachments"
+    },
+    {
+      "version": "4527",
+      "name": "prime_independent_tenant_alerts"
+    },
+    {
+      "version": "4528",
+      "name": "prime_deductive_change_order_integrity"
+    },
+    {
+      "version": "4529",
+      "name": "prime_native_team_administration"
+    },
+    {
+      "version": "4530",
+      "name": "prime_native_tenant_backup_restore"
+    },
+    {
+      "version": "4531",
+      "name": "prime_recovery_transaction_guards"
+    },
+    {
+      "version": "4532",
+      "name": "prime_native_recovery_history"
+    },
+    {
+      "version": "4533",
+      "name": "prime_recovery_utf8_checksums"
+    },
+    {
+      "version": "4534",
+      "name": "prime_lossless_archive_payloads"
+    },
+    {
+      "version": "4535",
+      "name": "prime_recovery_diagnostics_and_templates"
+    },
+    {
+      "version": "4536",
+      "name": "prime_bounded_restore_path_remapping"
+    },
+    {
+      "version": "4537",
+      "name": "prime_restore_preflight_snapshot_once"
+    },
+    {
+      "version": "4538",
+      "name": "prime_recovery_rpc_transaction_deadlines"
+    },
+    {
+      "version": "4539",
+      "name": "prime_restore_dependency_order"
+    },
+    {
+      "version": "4540",
+      "name": "prime_restore_revoke_public_capabilities"
+    },
+    {
+      "version": "4541",
+      "name": "prime_restore_canonical_revocation_timestamps"
+    },
+    {
+      "version": "4542",
+      "name": "prime_provisioning_authority"
+    },
+    {
+      "version": "4543",
+      "name": "prime_verified_backup_record_recovery"
+    },
+    {
+      "version": "4544",
+      "name": "prime_delivery_audit_execution_boundary"
+    },
+    {
+      "version": "4545",
+      "name": "prime_server_verified_archive_finalization"
+    },
+    {
+      "version": "4546",
+      "name": "prime_immutable_verified_archive_storage"
+    },
+    {
+      "version": "4547",
+      "name": "prime_public_invoice_document_parity"
+    },
+    {
+      "version": "4548",
+      "name": "prime_public_estimate_text_document"
+    },
+    {
+      "version": "4549",
+      "name": "prime_public_document_visibility"
+    },
+    {
+      "version": "4550",
+      "name": "prime_invoice_document_contract_lineage"
+    },
+    {
+      "version": "4551",
+      "name": "prime_canonical_company_configuration"
+    },
+    {
+      "version": "4552",
+      "name": "prime_executed_contract_copy"
+    },
+    {
+      "version": "4553",
+      "name": "prime_contract_public_projection"
+    },
+    {
+      "version": "4554",
+      "name": "prime_contract_draft_clarifications"
+    },
+    {
+      "version": "4555",
+      "name": "prime_hic_statutory_public_projection"
+    },
+    {
+      "version": "4556",
+      "name": "prime_tenant_knowledge_articles"
+    },
+    {
+      "version": "4557",
+      "name": "prime_estimate_public_company_minimization"
+    },
+    {
+      "version": "4558",
+      "name": "prime_estimate_project_details_rich"
+    },
+    {
+      "version": "4559",
+      "name": "prime_estimate_discount_document_text"
+    },
+    {
+      "version": "4560",
+      "name": "prime_estimate_material_labor_display"
+    }
+  ],
+  "files": {
+    "4512_prime_financial_domains.sql": "f723128fb381156319ad9c75d7d14ff6c2f85a521d3ac1b2993d218ba4e373b7",
+    "4536_prime_bounded_restore_path_remapping.sql": "ba61ac01c522c0aadffa8af288600f94be956751455d9977855a19c24d68f83a",
+    "4523_prime_engine_rls_execution_boundary.sql": "5960beb4b2a57aead9dd90f7c613d4f80f885ff514d10aa5556fe6f9e07ad5f2",
+    "4552_prime_executed_contract_copy.sql": "b1fd5a2d5df37645469e1ab39aa0d263f485fe6161b71624ab873d211617e837",
+    "4542_prime_provisioning_authority.sql": "f7454dc3d2f528b8fa718263fd9a70c9e72a28171bf55c6819cc8a21eff14224",
+    "4559_prime_estimate_discount_document_text.sql": "de901002a0d2e56b60a2b8ee6649a7db16f15f02604b1c3a2fca9e4778ea9ebd",
+    "4534_prime_lossless_archive_payloads.sql": "944f8b2aae53e1679977806f9ab0d307c21f9260e7cb6a9800d265ffaafb9c46",
+    "4530_prime_native_tenant_backup_restore.sql": "a31958fdd395a3700580cc265f1459065b1d3f4db34d72b4ebaa87024051c9c8",
+    "4544_prime_delivery_audit_execution_boundary.sql": "1c9bc20435000f846786fefede399b1c51bca428e6fe2045bfe5d9381d83927f",
+    "4006_isolation_acceptance.sql": "cf360c9e5bab6c11ef0b30226dbcfd7c8abfb70a71608f712e281171b83de338",
+    "4550_prime_invoice_document_contract_lineage.sql": "bc4bcb89b43065e71cec56659b3abca269f2cd979188c0e787075b6e08b87e8a",
+    "4002_trusted_context_and_support.sql": "30ce99b12954eb480931c08b66c7704bf3380179fbfc2b57676f49cb06ada9bd",
+    "4555_prime_hic_statutory_public_projection.sql": "b8cc41a1c90d757a3f78dc2519d35a931a1d39671a673dfa37b249835f7ed329",
+    "4501_prime_frontend_dependencies.sql": "ad018789ddc56d71982ce078ddc805786702abdacd7b04920d15acd65f48cc7c",
+    "4516_prime_private_storage_and_context.sql": "da045bfdcb803ca55783c74e10de79a4781e0d0c8e6176f77e39fc821c167352",
+    "4514_prime_current_scope_and_delivery.sql": "5b30b2f7d50541e4ec9eb05086c7626088e868d91a9f7f02875062072a8f73ed",
+    "4003_numbering_audit_idempotency.sql": "d015e76c13b3c34e9b459624b41c90670acdc652788855c94288bcd21debc631",
+    "4001_tenants_authorization.sql": "76a7b30938c1cc28aa5f78ba5f71d8bff5e9a093c81b0affd8fcf4c22b9917af",
+    "4522_prime_historical_actor_and_audit_integrity.sql": "a9821de3a9ba84ab66cd6b73c7d62d99c799cffe5565823207ea1950497df854",
+    "4531_prime_recovery_transaction_guards.sql": "b66357bee0cbfdebe6bfbf9ca6838f055388eab7cce683b8c1badd441be3e728",
+    "4525_prime_engine_managed_auth_privileges.sql": "ca3bd5295f70d0cb32ffa60bb9cc63c6ebf69d077fc4fe5509ecf5fe65582510",
+    "4543_prime_verified_backup_record_recovery.sql": "d19cdafcfd4dcdc0d0c0680f8f87b5252073f2e59c6517766c68ba993954ff77",
+    "4513_prime_deferred_import_relationships.sql": "ea81633f6955d5f8e5bec226f78b3abdf22a236b31f95af02ea56d5ea82e0c13",
+    "4557_prime_estimate_public_company_minimization.sql": "9b96118310ddcbfbdc6388a62712e160c6cb970caefa1aa91b0ab1731da2ad92",
+    "4518_prime_invoice_public_view.sql": "86af390c3a93223bf92fccc319e86b7a0a1a6d16394f2b94188c03d98a3cad3f",
+    "4554_prime_contract_draft_clarifications.sql": "4a782262e6a781b5b2e9059b874278753cb7332ba787c2cf3c7e1b20f9d0d0e2",
+    "4533_prime_recovery_utf8_checksums.sql": "dea208ae8d1f7fddca78b590f9c890b9be736a0bcd31067b2605d960bac7720e",
+    "4004_public_tokens.sql": "b6e31d65cbbb856d9ef8a893964367c89c98123350aaf6e16c897389eeb1fd01",
+    "4515_prime_current_finance_and_invoice_contracts.sql": "066bc262721761b20b98e25041b4448bb0a1b12031a73f2c4d095045f7a60d93",
+    "4548_prime_public_estimate_text_document.sql": "771a582c93e149db2b02c024bc9175b12a91c59d9d983d4da6a7550373a1e478",
+    "4503_prime_tenant_context_and_estimate_engine.sql": "93e86af4aac01264617ee6cfe037cacc6ddb0bed42497c294a1eb359d754cf6d",
+    "4539_prime_restore_dependency_order.sql": "a82f5340ea5aa8b7b651c745337bc1f09aef6744cf49bc6c4d4446a7b0cbc93a",
+    "4553_prime_contract_public_projection.sql": "dd7ffcfde7f215051f8065d6e4ead1f846cca926d6d10ca6464342e59510c2a7",
+    "4540_prime_restore_revoke_public_capabilities.sql": "7a821fe568f7a4f6a9367e1a5b091702da9c99d031320ccc4637cb58144f8a22",
+    "4532_prime_native_recovery_history.sql": "5f8830cd58feaf0b15b6b5bde624a9ee56a3396eac954761c64f8108464dcfba",
+    "4502_prime_donor_parity.sql": "cbb4e8114bb9a41d2f3534ab81b28e54e8a45e308cc870c2f826c5c17ca24b66",
+    "4511_prime_option_acceptance_integrity.sql": "51df2b4657e0a658bbc3bb36311f923a7aea3ea1dc6dc16c84ea8142f1d2bc74",
+    "4535_prime_recovery_diagnostics_and_templates.sql": "4bf34c19ee5f95b30fe96731a518f99e08033b7db51f3094cf3931321ed1bc7f",
+    "4005_bootstrap_amt.sql": "d15225f48426c1c66d42192f7e4c4d7ecc5a37ef9aee461bd4531122097f1a72",
+    "4526_prime_current_revision_cost_and_attachments.sql": "d1ccacc61d800b2c199094b53adf4f45c9d943f65c1f9584843f106af8cdbee3",
+    "4551_prime_canonical_company_configuration.sql": "bbf1cd2d4973dfe00c0e993fecd0fc25251f158fa61f1e46ab9088c8c7841ab4",
+    "4517_prime_financial_constraint_and_upsert_integrity.sql": "8557478f1b563020fd13d6fec9962a4fff31a047104f3a86b1a27fe01f468b64",
+    "4508_prime_import_context.sql": "a73fc3c1f7ce12aed4c184537773ccd0e4d2c6d2acfe6aad92249a632a1db902",
+    "4504_prime_public_tokens_and_estimate_acceptance.sql": "5c83de295bc7b7ed5d2d9464d879cca4b9cfaa986388bcd014de7b0a9586e53a",
+    "4549_prime_public_document_visibility.sql": "7184264c3af82eaf3dfa785e2d0043e55705b7e446e4ab93388f2e8c10a116f9",
+    "4558_prime_estimate_project_details_rich.sql": "4a2d286bc3f2b353a6489f2cf57003fa3594b501cecc32292547abe6a9e0d4b6",
+    "4521_prime_financial_read_models.sql": "24d226d15bd87f1ff055e1eaabb9333066d2723bf871c07f7b641ddb85b11fac",
+    "4519_prime_tenant_member_directory.sql": "fa541d6e88fcbb8f75dcbe4d42ab3fd6bbd7cc531b4204bf43c4adc114bf293d",
+    "4520_prime_core_business_guards.sql": "c23402693339a795839cadddee645d29916e8bc48f80266eba1e6c20aac0fd3d",
+    "4546_prime_immutable_verified_archive_storage.sql": "cf948094572f9dc055da74e5eaa8aeefe74f6d7025630e9e31de5bdf04f8ad96",
+    "4527_prime_independent_tenant_alerts.sql": "622f7c09243762b8b44146aeb56560591ae98d8239d6153afdd3d2a0c3f9ba7e",
+    "4560_prime_estimate_material_labor_display.sql": "91f6d27852269a43acf8a9cadc35983c25bdb9b39d6ebbb64f6ca0ef3d7239d4",
+    "4556_prime_tenant_knowledge_articles.sql": "0e2c484a137ca79a5c9ea38b70a4edb86ab8bf56c45695390b9ab30437a80b1c",
+    "4529_prime_native_team_administration.sql": "74a41d61bd7035c824a43ba31c9989ca4d7c647ad415b483fba505c395f1ab5f",
+    "4545_prime_server_verified_archive_finalization.sql": "8d7bb6c71a3b5563f3db1651b6073a37293222a585650bc37f47c45d2ef95c79",
+    "4000_platform_foundation.sql": "d9a2d91f8b493e84c6c357257ec189f897dd1fc2e6b1da4a9970649f9be72f08",
+    "4524_prime_optional_reference_tenant_integrity.sql": "c90d8519151bdebc3d7cb6fbba2aab8144569815c1384b285e924d3066cdb151",
+    "4509_prime_tenant_provisioning.sql": "0bd83a3fa38e487fe18bed9124089352c9eed9427506d036d7723c0cef7f2d7a",
+    "4541_prime_restore_canonical_revocation_timestamps.sql": "8fa60d18a8882ad18685a1aa21272db426e13563f9f9c32f058f0a35fa8a2f94",
+    "4510_prime_identity_and_branding_rpcs.sql": "9fc1ecc58edc9b7984a4d6082951f79653f40244157e8f64eb48210ca2adbb7e",
+    "4528_prime_deductive_change_order_integrity.sql": "46e12bc7a7841e8f2ebc145a3248847b042d5a21ccca29c92ac083be7a692a53",
+    "4537_prime_restore_preflight_snapshot_once.sql": "ef172b68a805814f073e4d16065535072a6d7880e0d96aa32b86705ff9861f45",
+    "4506_prime_ct_home_improvement_contracts.sql": "767411c3162bba38ff329b7791d7c0445bf005143859e8a572381529d9276391",
+    "4507_prime_catalog_invoicing_and_change_orders.sql": "d7a9b136e3d21e80f8993c225565a1acf24ab76a585a04534bd8145ff75ccf42",
+    "4500_prime_crm_catalog_estimates.sql": "5fbfd32a6f850e51ef48d4533d6156a4220dc8a04de76a8a7b812b8e5b391a66",
+    "4505_prime_estimate_revision_and_project_conversion.sql": "51db96d39fbff3b11a3077141f826aeed98effb60a5ca624fbad34eddc9c152e",
+    "4547_prime_public_invoice_document_parity.sql": "e2837bc7d34374fc3c4cb82a20631d312d79969dad8ed3b76ac10c3a957805a9",
+    "4538_prime_recovery_rpc_transaction_deadlines.sql": "37609069f9393dbdb0bf5ff673b08acf682ead38ec6a2ba75c10751057aa2e13"
+  },
+  "target": "supabase_db_falcon9-parity-20261018:5432/postgres, Docker Internal=true"
+}

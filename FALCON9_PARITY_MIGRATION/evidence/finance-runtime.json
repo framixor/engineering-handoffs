@@ -1,0 +1,54 @@
+[
+  {
+    "id": "FINANCE-ACTUAL-IMPORTED-DATA-READ",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-CANONICAL-SERIES-A-AND-B",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-SYNTHETIC-EXPENSE-PAYMENT",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-OVERPAYMENT-REJECTED",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-PURCHASE-APPROVE-ALLOCATE",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-VENDOR-PAYMENT-NO-DOUBLE-COUNT",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-ISOLATION-NEW-DOMAINS",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-BANK-STATEMENT-AND-DEDUP",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-PARTNER-CAPITAL",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-DISTRIBUTION-ENGINE-RECONCILIATION",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-POSITIVE-DISTRIBUTION-APPROVE-PAY-REVERSE",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-CASH-VIEW-NO-DOUBLE-COUNT",
+    "status": "PASS"
+  },
+  {
+    "id": "FINANCE-PERIOD-LOCK",
+    "status": "PASS"
+  }
+]

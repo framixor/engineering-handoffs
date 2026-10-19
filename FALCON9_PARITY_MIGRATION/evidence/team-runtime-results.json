@@ -1,0 +1,26 @@
+[
+  {
+    "id": "V2-AUTH-UI-A",
+    "status": "PASS",
+    "detail": "Actual local GoTrue login and persistent V2_LOCAL banner; tenant owner context resolved.",
+    "at": "2026-10-18T22:50:42.988Z"
+  },
+  {
+    "id": "TEAM-INVITE-OWN-HOSTINGER-MOCK",
+    "status": "PASS",
+    "detail": "Generated local GoTrue invitation; tenant-scoped pending record; own mailbox accepted mocked delivery.",
+    "at": "2026-10-18T22:50:43.999Z"
+  },
+  {
+    "id": "TEAM-REDEEM-ROLE-PROFILE-SUSPEND-RESUME",
+    "status": "PASS",
+    "detail": "Verified identity redeems exactly once; tenant role/profile update ignores client history; recovery transport mocked; suspended JWT loses tenant context and resumes after reactivation.",
+    "at": "2026-10-18T22:50:46.869Z"
+  },
+  {
+    "id": "TEAM-OTP-CALLBACK-UI",
+    "status": "PASS",
+    "detail": "Fresh anonymous browser verified local GoTrue OTP, redeemed the bound tenant invitation and reached password setup; token removed from URL.",
+    "at": "2026-10-18T22:50:49.578Z"
+  }
+]

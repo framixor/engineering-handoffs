@@ -1,0 +1,26 @@
+[
+  {
+    "id": "INVOICE-WIZARD-CREATE-AND-ISSUE-UI",
+    "status": "PASS",
+    "detail": "Current Prime wizard created a native draft; actual readiness dialog issued it without sending a message.",
+    "at": "2026-10-19T02:23:16.784Z"
+  },
+  {
+    "id": "INVOICE-PAYMENT-UI-AND-FINANCIAL-STATE",
+    "status": "PASS",
+    "detail": "Actual payment dialog persisted one receipt and derived fully-paid status through native financial triggers.",
+    "at": "2026-10-19T02:23:19.445Z"
+  },
+  {
+    "id": "PUBLIC-INVOICE-CURRENT-DOCUMENT-PDF-AND-PRIVACY",
+    "status": "PASS",
+    "detail": "Anonymous browser rendered the current invoice document and generated a real synthetic PDF; recursive public projection contains no tenant, actor, cost or internal-note fields.",
+    "at": "2026-10-19T02:23:20.316Z"
+  },
+  {
+    "id": "BACKUP-SETTINGS-GENERATE-PREVIEW-CANCEL-UI",
+    "status": "PASS",
+    "detail": "Settings generated and verified a real tenant archive; restore preview opened and cancellation cleared its staged copy.",
+    "at": "2026-10-19T02:23:22.351Z"
+  }
+]

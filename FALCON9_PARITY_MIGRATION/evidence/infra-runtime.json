@@ -1,0 +1,38 @@
+[
+  {
+    "id": "MULTI-MEMBERSHIP-CONTEXT-FAILS-CLOSED",
+    "status": "PASS"
+  },
+  {
+    "id": "VIEWER-READ-WRITE-DELETE-BOUNDARY",
+    "status": "PASS"
+  },
+  {
+    "id": "OPTIONAL-FK-DELETE-PRESERVES-TENANT",
+    "status": "PASS"
+  },
+  {
+    "id": "PUBLIC-INVOICE-ISSUE-PAYMENT-REVOCATION",
+    "status": "PASS"
+  },
+  {
+    "id": "REVISION-ATTACHMENT-COST-SOURCE-AND-CONVERTED-GUARD",
+    "status": "PASS"
+  },
+  {
+    "id": "CHANGE-ORDER-ADDITION-DEDUCTION-BILLED-FLOOR",
+    "status": "PASS"
+  },
+  {
+    "id": "TENANT-ALERT-PREFERENCE-DISMISS-ISOLATION",
+    "status": "PASS"
+  },
+  {
+    "id": "ENGINE-NO-BYPASS-AND-NO-API-ROLE-ESCALATION",
+    "status": "PASS"
+  },
+  {
+    "id": "HISTORICAL-AUTH-BLOCKED-AND-LEGACY-LINKS-REVOKED",
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "HIC-COMPANY-CREDENTIALS-DRAFT-READY-UI",
+    "status": "PASS",
+    "detail": "Actual native project UI created, edited, refreshed and readied the current contract; registration, addresses, contract-only text and visible scope were preserved without financial changes.",
+    "at": "2026-10-19T02:23:07.420Z"
+  },
+  {
+    "id": "HIC-ANONYMOUS-CLIENT-AND-CONTRACTOR-SIGNATURE-UI",
+    "status": "PASS",
+    "detail": "Anonymous homeowner and authenticated contractor signed through real UI controls; executed snapshot and exactly one down-payment invoice were created.",
+    "at": "2026-10-19T02:23:09.854Z"
+  },
+  {
+    "id": "HIC-SIGNED-COPY-PDF-READONLY-CAPABILITY",
+    "status": "PASS",
+    "detail": "Anonymous signed copy rendered both signature records and generated a real PDF; copy capability cannot sign and hidden scope was absent.",
+    "at": "2026-10-19T02:23:10.751Z"
+  }
+]

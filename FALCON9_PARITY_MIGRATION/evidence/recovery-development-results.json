@@ -1,0 +1,20 @@
+[
+  {
+    "id": "V2-AUTH-UI-A",
+    "status": "PASS",
+    "detail": "Actual local GoTrue login and persistent V2_LOCAL banner; tenant owner context resolved.",
+    "at": "2026-10-18T22:50:53.286Z"
+  },
+  {
+    "id": "RECOVERY-CREATE-VERIFY-ARCHIVE",
+    "status": "PASS",
+    "detail": "Actual server-created tenant archive contains database snapshot and private objects; stored checksum and manifest verification passed.",
+    "at": "2026-10-18T22:51:04.523Z"
+  },
+  {
+    "id": "RECOVERY-PREVIEW-FULL-RESTORE-UNDO",
+    "status": "PASS",
+    "detail": "Actual full tenant replacement passed whole-row, foreign-key and financial checks; undo restored the safety snapshot.",
+    "at": "2026-10-18T22:52:13.289Z"
+  }
+]

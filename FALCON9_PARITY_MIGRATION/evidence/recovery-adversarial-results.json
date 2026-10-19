@@ -1,0 +1,62 @@
+[
+  {
+    "id": "LEASE-BLOCKS-OWN-DB-STORAGE-OTHER-TENANT-CONTINUES",
+    "status": "PASS",
+    "detail": "Tenant maintenance blocked actual row and object writes; another tenant continued writing; authenticated worker completed and verified archive.",
+    "at": "2026-10-18T22:52:21.039Z"
+  },
+  {
+    "id": "VERIFIED-ARCHIVE-IMMUTABLE-SERVER-ONLY-ATTESTATION",
+    "status": "PASS",
+    "detail": "Even a tenant administrator could not overwrite/delete a verified file or self-attest a safety archive; server-only finalization RPC denied to end-user JWT.",
+    "at": "2026-10-18T22:52:21.130Z"
+  },
+  {
+    "id": "VIEWER-FOREIGN-ANON-BACKUP-AUTHORITY",
+    "status": "PASS",
+    "detail": "Viewer, foreign tenant and anonymous callers cannot create/read/download/restore/delete archives; private snapshot and foreign provisioning denied.",
+    "at": "2026-10-18T22:52:21.571Z"
+  },
+  {
+    "id": "POINT-RECOVERY-PREVIEW-ROLLBACK-AUDITED-VERSION",
+    "status": "PASS",
+    "detail": "Preview simulated a real update then rolled back; audited version restored through business triggers; forged tenant and direct history mutation denied.",
+    "at": "2026-10-18T22:52:21.684Z"
+  },
+  {
+    "id": "POINT-RECOVERY-VERIFIED-BACKUP-ATTESTATION",
+    "status": "PASS",
+    "detail": "Server verified archive provided a record version authorized for point recovery; ordinary business guards remained active.",
+    "at": "2026-10-18T22:52:21.777Z"
+  },
+  {
+    "id": "ARCHIVE-IMPORT-CORRUPTION-AND-FOREIGN-TENANT-DENIED",
+    "status": "PASS",
+    "detail": "External ZIP checksum and tenant manifest were enforced by actual server functions; a deliberately invalid own-tenant relation was staged for rollback verification.",
+    "at": "2026-10-18T22:52:22.128Z"
+  },
+  {
+    "id": "RESTORE-FK-FAILURE-ATOMIC-ROLLBACK-LEASE-RECOVERY",
+    "status": "PASS",
+    "detail": "A real foreign-key failure rolled back all tenant deletions/inserts; foreign tenant unchanged, failed run recorded and ordinary writes resumed.",
+    "at": "2026-10-18T22:52:23.096Z"
+  },
+  {
+    "id": "GUARDED-DELETE-LAST-VERIFIED-PROTECTION",
+    "status": "PASS",
+    "detail": "Authorized removal deleted an unreferenced file and metadata; the last verified archive remained protected.",
+    "at": "2026-10-18T22:52:23.350Z"
+  },
+  {
+    "id": "EXPIRED-WORKER-LEASE-RECOVERS",
+    "status": "PASS",
+    "detail": "A simulated abandoned worker lease expired; authenticated recovery marked the job failed and released tenant writes.",
+    "at": "2026-10-18T22:52:23.480Z"
+  },
+  {
+    "id": "JWT-TAMPER-AND-CRONS-DISABLED",
+    "status": "PASS",
+    "detail": "Tampered JWT rejected by local gateway/Auth; all three real scheduler routes reject execution while disabled.",
+    "at": "2026-10-18T22:52:23.540Z"
+  }
+]
