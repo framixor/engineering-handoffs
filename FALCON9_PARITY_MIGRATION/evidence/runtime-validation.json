@@ -1,0 +1,57 @@
+{
+  "assessment": "Local implementation and audit; source Prime 0d05ae1c only, no production publication claim.",
+  "regressionGeneration": "Disposable earlier generation; final 65-migration schema. Full-data recovery and business/security/provider-mock regression executed before its retirement.",
+  "retainedGeneration": "Fresh 65-migration replay; final importer, 5446 rows/94 tables, immediate replay and replay after separate synthetic-tenant QA. Compiled Node browser workflows and scheduler routes tested here.",
+  "functionalSuiteCounts": {
+    "goldenClientFirst": 98,
+    "goldenContractorFirst": 98,
+    "financeApi": 13,
+    "infrastructureApi": 9,
+    "parityBrowserAndMock": 10,
+    "team": 4,
+    "recoveryIncludingLogin": 3,
+    "recoveryAdversarial": 10,
+    "compiledHic": 3,
+    "compiledInvoiceAndBackup": 4,
+    "compiledCrm": 1,
+    "compiledMasterDataAndClosing": 2,
+    "compiledScheduler": 6,
+    "signedCopyEmailMock": 1,
+    "securityCatalog": 7
+  },
+  "navigationOnly": {
+    "compiledRoutes": 28,
+    "status": "PASS",
+    "doesNotCertifyEveryWorkflow": true
+  },
+  "quality": {
+    "typecheck": {
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    "vitest": {
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    "endpoint-guards": {
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    "changed-lint": {
+      "exitCode": 0,
+      "status": "PASS",
+      "files": 159,
+      "errors": 0,
+      "warnings": 29
+    }
+  },
+  "finalPrimeImportUnchangedAfterQa": true,
+  "defaultSchedulerState": "disabled; no remote scheduler registered",
+  "runtimePreset": "node-server (local explicit build override); default Cloudflare compiled earlier, runtime NOT TESTED",
+  "limits": [
+    "No live providers or remote environments contacted.",
+    "No production publication or full pixel parity claim.",
+    "Original Storage binaries absent; original Auth not restored.",
+    "All form variants, devices, concurrency loads and hosted-origin CORS policies require UAT."
+  ]
+}

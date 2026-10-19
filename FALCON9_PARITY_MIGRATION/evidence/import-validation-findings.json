@@ -1,0 +1,9 @@
+{
+  "finding": "Deleted-record history mappings must not be eligible for active media or attachment references.",
+  "sourceRowsAffected": 1,
+  "fix": "Active polymorphic joins require live mappings; historical_deleted is restricted to audit mapping. Reconciliation rejects historical business references.",
+  "finalFreshReplay": "PASS",
+  "historicalBusinessReferences": 0,
+  "sourceOrphanExcluded": 1,
+  "productionImpact": "None; discarded disposable rehearsal only."
+}

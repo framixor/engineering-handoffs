@@ -1,0 +1,492 @@
+[
+  {
+    "scenario": "S0 \u2014 real authentication and tenant context resolve from membership",
+    "name": "authenticated read returns synthetic tenant data",
+    "pass": true
+  },
+  {
+    "scenario": "S0 \u2014 real authentication and tenant context resolve from membership",
+    "name": "rows carry the Prime tenant",
+    "pass": true
+  },
+  {
+    "scenario": "S0 \u2014 real authentication and tenant context resolve from membership",
+    "name": "insert with no tenant_id lands in the caller tenant",
+    "pass": true
+  },
+  {
+    "scenario": "S0 \u2014 real authentication and tenant context resolve from membership",
+    "name": "a caller-supplied foreign tenant_id is rejected",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "donor pricing engine computed the totals",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "down payment is 30% of the total, cents-exact",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "remaining balance is the complement",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "estimate number was allocated",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "create_estimate_revision returns the new revision id",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the parent became superseded",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the parent points at its successor",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the revision is a draft",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "revision_number incremented",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "lineage points back to the parent",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "public number carries the -R suffix",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "pricing was copied cents-exact",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "scope children were copied into the revision",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "a second concurrent revision is refused",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "a share link mints a raw token exactly once",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "only a hash is stored, never the raw token",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "an anonymous caller can read the shared estimate",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the public projection leaks no cost, profit or internal field",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the public projection is not yet accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "an unknown token is refused",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the client can accept anonymously",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "status became client_accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the acceptance snapshot was frozen",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "acceptance recorded the signer",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "acceptance is attributed to the electronic route",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the accepted revision number was captured",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "a replayed acceptance is refused (idempotent, single acceptance)",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the used link no longer resolves",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the accepted snapshot is immutable after a later edit",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "the recorded signer is immutable too",
+    "pass": true
+  },
+  {
+    "scenario": "S1 \u2014 Estimate revision lineage + public token acceptance",
+    "name": "a superseded revision cannot be accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "approve_and_convert_estimate returns a project id",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "a CT home-improvement project lands in pending_contract",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the project number was allocated",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the contract baseline is the estimate subtotal, cents-exact",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the project belongs to the estimate client",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the project carries the job site",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the budget snapshot came from the estimate cost lines, cents-exact",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the estimate is marked approved",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "the estimate records its project",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "a second conversion returns the SAME project (no duplicate)",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "exactly one project exists for the estimate",
+    "pass": true
+  },
+  {
+    "scenario": "S2 \u2014 Estimate -> Project conversion (Connecticut home improvement)",
+    "name": "an estimate without a job site cannot be converted",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a contract can be prepared from the converted project",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the contract starts as a draft",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the contract is typed as Connecticut home improvement",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a draft contract cannot be signed",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "preflight refuses a snapshot missing statutory terms",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a complete snapshot passes preflight",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the contract is ready for signature",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the statutory cancellation deadline is three CT business days out",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the earliest lawful work start is the day after that",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a client signature token is minted",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the client can read the contract anonymously",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the anonymous view exposes no internal ids beyond the contract",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the client signature is accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "ONE signature does not execute the contract",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "signed_at stays null with one signature",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "no executed snapshot exists yet",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "no down payment is issued on a single signature",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a signed-by-one contract cannot be returned to draft",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the contractor signature is accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "BOTH signatures execute the contract",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "signed_at is stamped on full execution",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "an executed snapshot was frozen",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the executed snapshot records both parties",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "full signature issues exactly one down-payment invoice",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the down payment is the estimate down payment, cents-exact",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "a replayed contractor signature issues no second invoice",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "still exactly one down-payment invoice",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the signature token is single-use",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "signature evidence cannot be rewritten after execution",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the executed snapshot survives a tamper attempt",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the project cannot start before the cancellation period ends",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "after the cancellation period the project can start",
+    "pass": true
+  },
+  {
+    "scenario": "S3 \u2014 CT/HIC dual-party signature, executed snapshot, down payment",
+    "name": "the project moved to scheduled",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "the down-payment invoice is open (issued by the contract)",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "total_amount is derived, not stated",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "a partial payment is accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "status derives from the payment sum (partial)",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "a payment one cent over the balance is rejected",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "a payment for exactly the balance is accepted",
+    "pass": true
+  },
+  {
+    "scenario": "S4 \u2014 invoice issue and guarded payment",
+    "name": "status derives from the payment sum (received)",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B sees none of Prime's clients",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B holds only its own rows",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B cannot read a Prime row by its id",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B can create its own data",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "Prime cannot read tenant B rows",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "a foreign-tenant foreign key is rejected by the database",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B cannot mint a share link for a Prime estimate",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "tenant B cannot update a Prime estimate",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "an anonymous caller gets no table access at all",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "anon holds ZERO table privileges in the data schema",
+    "pass": true
+  },
+  {
+    "scenario": "S5 \u2014 tenant isolation",
+    "name": "anonymous cannot list estimates either",
+    "pass": true
+  }
+]

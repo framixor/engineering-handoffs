@@ -1,0 +1,50 @@
+[
+  {
+    "id": "PARITY-CREATE-ESTIMATE-FORM",
+    "status": "PASS",
+    "detail": "Real current-baseline create dialog selected a client, created a native estimate and navigated to its editor.",
+    "at": "2026-10-19T02:21:29.876Z"
+  },
+  {
+    "id": "PARITY-ESTIMATE-TABS-AND-SCOPE-SAVE",
+    "status": "PASS",
+    "detail": "All ten current editor tabs mounted; rich Scope and Overview were saved through actual UI and read back from the native database.",
+    "at": "2026-10-19T02:21:36.293Z"
+  },
+  {
+    "id": "PARITY-CLIENT-DOCUMENT-DISPLAY-CONTROLS",
+    "status": "PASS",
+    "detail": "Actual pricing controls persisted the optional client note and material/labor visibility flag.",
+    "at": "2026-10-19T02:21:38.472Z"
+  },
+  {
+    "id": "PARITY-PUBLIC-1500-OPTION",
+    "status": "PASS",
+    "detail": "Real anonymous UI selected and accepted the $1500 option; persisted and frozen document totals equal $1500.",
+    "at": "2026-10-19T02:21:40.134Z"
+  },
+  {
+    "id": "PARITY-RICH-DETAILS-REVISION-GUARD",
+    "status": "PASS",
+    "detail": "Additive rich field persists, survives native JSON-based revision cloning, and invalidates Finalized on edit. No financial/import data was changed.",
+    "at": "2026-10-19T02:21:40.283Z"
+  },
+  {
+    "id": "PARITY-VISUAL-DESKTOP-MOBILE",
+    "status": "PASS",
+    "detail": "21 synthetic captures at 1440px and 390px; sidebar/mobile menu and explicit Prime baseline identification verified. Human image review is recorded separately.",
+    "at": "2026-10-19T02:21:53.830Z"
+  },
+  {
+    "id": "PARITY-NATIVE-TEAM-DIRECTORY",
+    "status": "PASS",
+    "detail": "Settings team panel used the V2-only server handler and tenant member directory.",
+    "at": "2026-10-19T02:21:54.740Z"
+  },
+  {
+    "id": "PARITY-UI-ERRORS",
+    "status": "PASS",
+    "detail": "No native API or unhandled page errors during exercised workflows.",
+    "at": "2026-10-19T02:21:54.741Z"
+  }
+]

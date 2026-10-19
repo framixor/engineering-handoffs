@@ -1,0 +1,770 @@
+{
+  "pass": true,
+  "tables": [
+    {
+      "table": "categories",
+      "source": 16,
+      "target": 16,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "units_of_measure",
+      "source": 23,
+      "target": 23,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "service_categories",
+      "source": 34,
+      "target": 34,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "payment_methods",
+      "source": 8,
+      "target": 8,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "settings",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 9,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendors",
+      "source": 58,
+      "target": 58,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_categories",
+      "source": 15,
+      "target": 15,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_addresses",
+      "source": 7,
+      "target": 7,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_contacts",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_compliance",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "catalog_code_counters",
+      "source": 8,
+      "target": 8,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "catalog_items",
+      "source": 60,
+      "target": 60,
+      "numericColumns": 12,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "catalog_item_cost_history",
+      "source": 52,
+      "target": 52,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "scope_library_items",
+      "source": 38,
+      "target": 38,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_scope_templates",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_scope_template_items",
+      "source": 13,
+      "target": 13,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "exclusion_templates",
+      "source": 15,
+      "target": 15,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "courtesy_services",
+      "source": 3,
+      "target": 3,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "finish_packages",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "finish_package_components",
+      "source": 5,
+      "target": 5,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "payment_plan_templates",
+      "source": 3,
+      "target": 3,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "payment_plan_template_installments",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "company_credentials",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "clients",
+      "source": 21,
+      "target": 21,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "client_contacts",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "properties",
+      "source": 26,
+      "target": 26,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "property_contacts",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimates",
+      "source": 34,
+      "target": 34,
+      "numericColumns": 30,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_items",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 8,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_cost_items",
+      "source": 117,
+      "target": 117,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_scope_items",
+      "source": 137,
+      "target": 137,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_options",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 8,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_exclusions",
+      "source": 83,
+      "target": 83,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_courtesy_services",
+      "source": 5,
+      "target": 5,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_payment_schedule",
+      "source": 46,
+      "target": 46,
+      "numericColumns": 5,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_specified_items",
+      "source": 3,
+      "target": 3,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "estimate_service_categories",
+      "source": 8,
+      "target": 8,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "proposal_media_assets",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "projects",
+      "source": 16,
+      "target": 16,
+      "numericColumns": 33,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "project_budget_lines",
+      "source": 45,
+      "target": 45,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "change_orders",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 5,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "home_improvement_contracts",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "invoices",
+      "source": 18,
+      "target": 18,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "invoice_payments",
+      "source": 12,
+      "target": 12,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "document_share_links",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "proposal_media_usage",
+      "source": 1,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 1
+    },
+    {
+      "table": "knowledge_articles",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "accounts",
+      "source": 4,
+      "target": 4,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "attachments",
+      "source": 5,
+      "target": 5,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "audit_log",
+      "source": 3622,
+      "target": 3622,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "capital_adjustments",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "capital_contributions",
+      "source": 19,
+      "target": 19,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "card_statement_payments",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distribution_advances",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distribution_lines",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 6,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distribution_payments",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distribution_project_lines",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 8,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distribution_settings",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "distributions",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 16,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "expense_allocations",
+      "source": 44,
+      "target": 44,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "expense_payments",
+      "source": 116,
+      "target": 116,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "expense_types",
+      "source": 10,
+      "target": 10,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "expenses",
+      "source": 116,
+      "target": 116,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "inventory_cost_pool",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "inventory_movements",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "inventory_state",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "member_amounts_due",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 7,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "member_loans",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "member_reimbursements",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "ownership_rule_members",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "ownership_rule_sets",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "ownership_transaction_entries",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 5,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "ownership_transactions",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "partner_capital_activity",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "partner_withdrawal_offsets",
+      "source": 1,
+      "target": 1,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "partner_withdrawals",
+      "source": 10,
+      "target": 10,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "partners",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "period_results",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 8,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "period_settings",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "project_reserve_events",
+      "source": 16,
+      "target": 16,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "project_reserve_transfers",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "purchase_installments",
+      "source": 10,
+      "target": 10,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "purchase_line_allocations",
+      "source": 43,
+      "target": 43,
+      "numericColumns": 3,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "purchase_lines",
+      "source": 101,
+      "target": 101,
+      "numericColumns": 15,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "purchases",
+      "source": 95,
+      "target": 95,
+      "numericColumns": 9,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "statement_imports",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 8,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "statement_transactions",
+      "source": 55,
+      "target": 55,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "tax_year_rules",
+      "source": 2,
+      "target": 2,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "transaction_matches",
+      "source": 33,
+      "target": 33,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_documents",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 2,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_payment_applications",
+      "source": 96,
+      "target": 96,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_payment_tax_details",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 4,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_payments",
+      "source": 96,
+      "target": 96,
+      "numericColumns": 1,
+      "numericMismatches": 0,
+      "excluded": 0
+    },
+    {
+      "table": "vendor_tax_profiles",
+      "source": 0,
+      "target": 0,
+      "numericColumns": 0,
+      "numericMismatches": 0,
+      "excluded": 0
+    }
+  ],
+  "countFailures": 0,
+  "numericMismatches": 0,
+  "duplicateMappings": 0,
+  "foreignMappings": 0,
+  "historicalBusinessReferences": 0,
+  "historyReferences": {
+    "liveRecordMappings": 3072,
+    "deletedRecordEvents": 300,
+    "excludedEntityEvents": 231,
+    "unexplainedNativeReferences": 0,
+    "tombstoneIdentities": 103
+  },
+  "valuesSuppressed": true
+}

@@ -1,0 +1,21 @@
+{
+  "typecheck": {
+    "exitCode": 0,
+    "status": "PASS"
+  },
+  "vitest": {
+    "exitCode": 0,
+    "status": "PASS"
+  },
+  "endpoint-guards": {
+    "exitCode": 0,
+    "status": "PASS"
+  },
+  "changed-lint": {
+    "exitCode": 0,
+    "status": "PASS",
+    "files": 159,
+    "errors": 0,
+    "warnings": 29
+  }
+}

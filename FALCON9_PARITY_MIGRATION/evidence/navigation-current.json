@@ -1,0 +1,142 @@
+[
+  {
+    "path": "/",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/clients",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/estimates",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/projetos",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/faturamento/invoices",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/faturamento/recebimentos",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/faturamento/a-receber",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/purchases/new",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/purchases",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/bills",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/vendors",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/products",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/despesas/nova",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/despesas/transacoes",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/extrato-fornecedor",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/despesas",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/cartoes",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/reconciliacao",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/socios",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/distribuicao",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/valores-devidos-socios",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/aportes",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/ajuda",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/configuracoes",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/clients/",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/properties",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/properties/",
+    "status": "PASS",
+    "apiErrors": []
+  },
+  {
+    "path": "/fechamento-periodo",
+    "status": "PASS",
+    "apiErrors": []
+  }
+]

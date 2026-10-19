@@ -1,0 +1,65 @@
+[
+  {
+    "name": "falcon9-parity-runner-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {
+      "8443/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "8443"
+        }
+      ]
+    },
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_storage_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_rest_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_inbucket_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_auth_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_kong_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  },
+  {
+    "name": "supabase_db_falcon9-parity-20261018",
+    "networks": [
+      "falcon9-parity-isolated-20261018"
+    ],
+    "publishedPorts": {},
+    "volumesPreserved": true
+  }
+]

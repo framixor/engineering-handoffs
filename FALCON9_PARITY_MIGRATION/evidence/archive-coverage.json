@@ -1,0 +1,28 @@
+{
+  "source": "Existing local September 19 archive; no new production backup or export",
+  "createdAt": "2026-09-19T17:45:27Z",
+  "bytes": 2429934,
+  "sha256": "c1b2b489ffd0c8c580b67e6156c61b969dc944ae3479c8394808a557164579b2",
+  "format": "pg_dump custom 1.16, zstd; PG 17.6 / pg_dump 18.6",
+  "zipCrc": "PASS (existing archive verification)",
+  "tocEntries": 2367,
+  "tableDataEntries": {
+    "public": 102,
+    "auth": 27,
+    "storage": 8
+  },
+  "authUsers": 2,
+  "authIdentities": 2,
+  "authRestored": false,
+  "historicalActorsRemappedAndBlocked": 2,
+  "storageObjectMetadata": 19,
+  "storageBucketMetadata": 13,
+  "storageBinariesAvailable": 0,
+  "importedTables": 94,
+  "importedRows": 5446,
+  "numericColumns": 317,
+  "knowledgeArticlesInSource": 0,
+  "excludedGlobalOrOutOfScopeTables": 8,
+  "sourceOrphanMediaRowsExcluded": 1,
+  "valuesPublished": false
+}

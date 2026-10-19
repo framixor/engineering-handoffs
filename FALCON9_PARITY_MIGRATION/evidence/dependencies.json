@@ -1,0 +1,19 @@
+{
+  "runtime": "Independent Framixor multi-tenant Supabase Auth/Database/Storage; native financial and document engines",
+  "lovableBridgeRequired": false,
+  "lovableRemaining": "Build preset/package and optional legacy preview hooks; legacy address connector opt-in remains disabled and unconfigured. No proprietary runtime called.",
+  "hostinger": "Own direct server adapter; tenant mailbox config; compiled signed-copy UI and other flows tested with mocked transport only",
+  "google": "Own direct Places/Validation/Static Maps server adapters; mock runtime PASS; real project keys, billing and referrer restrictions NOT TESTED",
+  "ai": "Own configured provider for Scope generation/improvement, Project Overview and vendor-invoice extraction; mock runtime PASS; real quality/latency/cost NOT TESTED",
+  "database": "Original donor backup transformed, not attached/restored to Marley infrastructure",
+  "notPortedByDesign": [
+    "Original Auth credentials/sessions/tokens",
+    "Global Prime system-backup infrastructure",
+    "Active legacy public links"
+  ],
+  "missingSourceData": [
+    "Storage binaries",
+    "Exact original signed documents/assets",
+    "Fresh source cutover snapshot"
+  ]
+}

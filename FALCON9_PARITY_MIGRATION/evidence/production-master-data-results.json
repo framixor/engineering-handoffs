@@ -1,0 +1,14 @@
+[
+  {
+    "id": "PROPERTY-CATALOG-CREATE-EDIT-NATIVE-API-AND-UI-READ",
+    "status": "PASS",
+    "detail": "Authenticated API created/edited property and catalog data, allocated a catalog code and retained exact cents; compiled screens listed those records. Full form variants remain UAT.",
+    "at": "2026-10-19T02:16:51.523Z"
+  },
+  {
+    "id": "MONTHLY-CLOSING-COMPILED-REPORT-UI",
+    "status": "PASS",
+    "detail": "Compiled monthly closing report loaded through native data queries without API errors. Financial locking/distribution assertions are separate API evidence.",
+    "at": "2026-10-19T02:16:52.584Z"
+  }
+]

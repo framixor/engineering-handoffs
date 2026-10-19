@@ -1,0 +1,8 @@
+[
+  {
+    "id": "EXECUTED-COPY-HOSTINGER-UI-AUDIT-IMMUTABILITY",
+    "status": "PASS",
+    "detail": "Actual signed-copy UI called independent Hostinger adapter with mock transport; accepted delivery was audited without changing either contract snapshot.",
+    "at": "2026-10-18T23:00:39.127Z"
+  }
+]

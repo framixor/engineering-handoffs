@@ -1,0 +1,26 @@
+[
+  {
+    "id": "SCHEDULED-WRONG-CREDENTIAL-DENIED",
+    "status": "PASS"
+  },
+  {
+    "id": "SCHEDULED-OWN-TENANT-ARCHIVE-SERVER-VERIFIED",
+    "status": "PASS"
+  },
+  {
+    "id": "SCHEDULED-UTC-DAY-IDEMPOTENCY",
+    "status": "PASS"
+  },
+  {
+    "id": "RETENTION-PROTECTS-LAST-VERIFIED",
+    "status": "PASS"
+  },
+  {
+    "id": "RETENTION-REMOVES-ONLY-ELIGIBLE-OWN-ARCHIVE",
+    "status": "PASS"
+  },
+  {
+    "id": "CONTINUATION-COMPLETED-AND-FOREIGN-ID-DENIED",
+    "status": "PASS"
+  }
+]

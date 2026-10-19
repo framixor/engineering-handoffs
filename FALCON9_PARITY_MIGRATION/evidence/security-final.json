@@ -1,0 +1,30 @@
+[
+  {
+    "id": "RLS-ALL-NATIVE-TENANT-TABLES",
+    "status": "PASS"
+  },
+  {
+    "id": "COMPOSITE-TENANT-FOREIGN-KEYS-VALIDATED",
+    "status": "PASS"
+  },
+  {
+    "id": "AUTH-AND-ENGINE-NO-ESCALATION",
+    "status": "PASS"
+  },
+  {
+    "id": "PRIVATE-IMPORT-RECOVERY-SCHEMAS-DENIED",
+    "status": "PASS"
+  },
+  {
+    "id": "SECURITY-DEFINER-SEARCH-PATH-SET",
+    "status": "PASS"
+  },
+  {
+    "id": "APPEND-ONLY-HISTORY-RECOVERY-METADATA",
+    "status": "PASS"
+  },
+  {
+    "id": "NO-ACTIVE-DATABASE-CRONS",
+    "status": "PASS"
+  }
+]

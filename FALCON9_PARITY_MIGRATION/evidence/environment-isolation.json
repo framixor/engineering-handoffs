@@ -1,0 +1,143 @@
+{
+  "createdAt": "2026-10-18T23:02:20.629160+00:00",
+  "primary": "Falcon 9 independent multi-tenant V2; not Flooring RC12",
+  "frontend": "Existing Prime-derived Framixor frontend, isolated feature worktree based on main 52ae656 plus preserved pre-existing overlays and local parity implementation; checksums in source-manifest.json",
+  "backend": "falcon9-parity-backend/v2; 65 local candidate migrations; CLI postgres owner, not superuser",
+  "prime": "0d05ae1c / source APP_VERSION 1.33.1; never started or contacted",
+  "services": [
+    {
+      "name": "falcon9-parity-runner-20261018",
+      "image": "postgres:17",
+      "imageId": "sha256:4ad81f72475d54834d03eb3e643dbc2dcf85bfbe543a5480aa1436facf774632",
+      "publishedPorts": {
+        "8443/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8443"
+          }
+        ]
+      },
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.8"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_storage_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/storage-api:v1.62.5",
+      "imageId": "sha256:4db2fd351aa951b2ddc190fc252c0e83796bb56b6b8e1a058441d961ea87577a",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.7"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_rest_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/postgrest:v14.14",
+      "imageId": "sha256:de2f4d042d5efb5d1362d98c11e5e0773bedc1376bafcdb4ec863fc18d25f52d",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.4"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_inbucket_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/mailpit:v1.30.2",
+      "imageId": "sha256:cdb09a322d77e0b233727104beaafb4b7b503fd3badce6a6d9e58fd9993025f6",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.5"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_auth_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/gotrue:v2.192.0",
+      "imageId": "sha256:96be953b078582b242d6fde6a5e8ab545f5d4ef12fbaf51893ae7e4c760775f0",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.6"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_kong_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/kong:2.8.1",
+      "imageId": "sha256:3cefb958bcd694597b65adc00053a762b1f9a6df3c6031af528d052d75a64e1a",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.3"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    },
+    {
+      "name": "supabase_db_falcon9-parity-20261018",
+      "image": "public.ecr.aws/supabase/postgres:17.6.1.143",
+      "imageId": "sha256:2d3ac69ad5c95d81458cc93a6cc6c31a98dfa00cd28f88a0a9358d315e1c357a",
+      "publishedPorts": {},
+      "networks": [
+        {
+          "name": "falcon9-parity-isolated-20261018",
+          "internal": true,
+          "ip": "172.24.0.2"
+        }
+      ],
+      "routingTable": "Iface\tDestination\tGateway \tFlags\tRefCnt\tUse\tMetric\tMask\t\tMTU\tWindow\tIRTT                                                       \neth0\t000018AC\t00000000\t0001\t0\t0\t0\t0000FFFF\t0\t0\t0                                                                               \n",
+      "hasDefaultRoute": false
+    }
+  ],
+  "versions": {
+    "node": "v24.19.0",
+    "@tanstack/react-start": "1.168.60",
+    "@tanstack/react-router": "1.170.41",
+    "@supabase/supabase-js": "2.111.0",
+    "vite": "8.1.5",
+    "vitest": "5.0.0",
+    "react": "19.2.8",
+    "@lovable.dev/vite-tanstack-config": "2.23.1"
+  },
+  "endpoints": {
+    "browser": "https://falcon9.localhost:8443 (host loopback 127.0.0.1:8443 only)",
+    "authRestStorageProxy": "same origin /auth/v1, /rest/v1, /storage/v1",
+    "backendInternal": "http://supabase_kong_falcon9-parity-20261018:8000",
+    "database": "supabase_db_falcon9-parity-20261018:5432"
+  },
+  "envFilesCopied": false,
+  "runtimeEnvironment": "allowlisted; VITE_FRAMIXOR_ENV=V2_LOCAL; schema=public; no real external provider keys",
+  "providers": "Hostinger, Google and own AI provider mocked; other remote fetch blocked; browser external requests aborted/fulfilled; no default network route",
+  "data": "Existing September 19 archive transformed into one tenant; synthetic Auth and QA tenants only; never restored original Auth or Storage credentials. Private data outside repositories.",
+  "bootstrap": "Empty stock Supabase bootstrapped in task-only temporary network, detached before migrations/app/browser. Name recreated internal for Docker restart compatibility; no workloads attached.",
+  "jobs": "No remote scheduler registered. Tenant-authenticated scheduled/continue/retention routes tested with synthetic local configuration, then disabled. Edge/realtime/analytics/pooler disabled; no external webhook or email worker."
+}
